@@ -32,7 +32,7 @@ class Posts extends CI_Controller {
 			$data['on']['content'] = $post['content'];
 			$date = date_create($post['date_modified']);
 			$data['on']['date'] = date_format($date,"M,d Y");
-			$data['on']['tag'] = $post['tag_id'];
+			//$data['on']['tag'] = $post['tag_id'];
 			$data['on']['category'] = $post['category'];
 			$data['on']['view'] = $post['count'];
 		}
@@ -51,7 +51,7 @@ class Posts extends CI_Controller {
 			$date = date_create($pop['date_modified']);
 			$data['popular']['date'][$i] = date_format($date,"M,d Y");
 
-			$data['popular']['tag'][$i] = $pop['tag_id'];
+			//$data['popular']['tag'][$i] = $pop['tag_id'];
 
 			$data['popular']['category'][$i] = $pop['category'];
 
@@ -73,7 +73,7 @@ class Posts extends CI_Controller {
 			$date = date_create($r['date_modified']);
 			$data['recent']['date'][$i] = date_format($date,"M,d Y");
 
-			$data['recent']['tag'][$i] = $r['tag_id'];
+			//$data['recent']['tag'][$i] = $r['tag_id'];
 
 			$data['recent']['category'][$i] = $r['category'];
 
