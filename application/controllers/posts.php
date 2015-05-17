@@ -15,11 +15,14 @@ class Posts extends CI_Controller {
 	{
 		$this->load->model("posts_model");
 		$posts = $this->posts_model->GetPost($id);
+
+		date_default_timezone_set('Asia/Jakarta');
 		foreach ($posts as $post) {
 			$data['title'] =  $post['title'];
 			$data['content'] = $post['content'];
-			$data['date'] = $post['date_updated'];
-			$data['tag'] = $post['tag'];
+			$date = date_create($post['date_modified']);
+			$data['date'] = date_format($date,"M,d Y");
+			$data['tag'] = $post['tag_id'];
 			$data['category'] = $post['category'];
 		}
 

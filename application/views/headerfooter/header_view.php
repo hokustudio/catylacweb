@@ -41,8 +41,8 @@
             
            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand hidden-sm hidden-xs" href="#"><img class="img-brand" src="<?php echo base_url().'images/logo.png'?>"/></a>
-                <a class="navbar-brand hidden-lg hidden-md" href="#"><img class="img-brand-sm" src="<?php echo base_url().'images/logo.png'?>"/></a>
+                <a class="navbar-brand hidden-sm hidden-xs" href="<?php echo base_url().'home' ?>"><img class="img-brand" src="<?php echo base_url().'images/logo.png'?>"/></a>
+                <a class="navbar-brand hidden-lg hidden-md" href="<?php echo base_url().'home' ?>"><img class="img-brand-sm" src="<?php echo base_url().'images/logo.png'?>"/></a>
             </div>
         </div>
         <!-- /.container -->

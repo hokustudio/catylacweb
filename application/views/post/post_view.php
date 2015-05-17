@@ -4,7 +4,8 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <div class="col-md-12">
                         <div class="cumbread">
-                            <a href="#">Beranda</a><span> > </span><a href="#">Inspirasi</a><span> > </span><a>Tips & Trik</a>
+                            <a href="<?php echo base_url().'home' ?>">Beranda</a><span> > </span><a href="#">Inspirasi</a><span> > </span><a>Tips & Trik</a>
+                            <span> > </span><a href="<?php echo current_url() ?>"><?php echo $title ?></a>
                         </div>
                     </div>
                 </div>

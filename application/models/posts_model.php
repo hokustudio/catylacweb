@@ -3,7 +3,7 @@
 class posts_model extends CI_Model {
 	public function GetPost($id)
 	{
-		$query = "SELECT * FROM cat_posts WHERE id=".$id;
+		$query = "SELECT * FROM post WHERE id=".$id;
 		$result = $this->db->query($query);
         $result = $result->result_array();
 		return $result;
@@ -11,7 +11,7 @@ class posts_model extends CI_Model {
 
 	public function GetRecentPosts($numb)
 	{
-		$query = "SELECT * FROM cat_posts ORDER BY id DESC LIMIT ".$numb;
+		$query = "SELECT * FROM post ORDER BY id DESC LIMIT ".$numb;
 		$result = $this->db->query($query);
         $result = $result->result_array();
 		return $result;
