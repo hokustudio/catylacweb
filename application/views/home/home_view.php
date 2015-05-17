@@ -37,8 +37,13 @@
                             </div>
                             <p class="content">
                             <?php echo $content[$k]; ?>
-                            <a href="Ruang-kerja-minimalis.php">read more</a></p>
+                            </p>
                         </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top:-12px;"> 
+                            <a href="Ruang-kerja-minimalis.php">read more</a>
+                        </div>
+                    </div>
                         <?php $j++; $k++; continue;} ?>
                         <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                             <div class="col-md-4" style="padding:0px;">
