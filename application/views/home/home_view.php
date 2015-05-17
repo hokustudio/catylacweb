@@ -1,4 +1,4 @@
-<div class="container" style="margin-top:120px;">
+<div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-12">
                     <div class="img-left col-md-7 col-lg-8">
@@ -19,7 +19,7 @@
             </div>
             </div>
             <div class="row" style="margin-top:30px;">
-                <div class="col-md-10 col-md-offset-1" style="background-color:#c4df9c; padding-top:20px; padding-bottom:20px;">
+                <div class="col-md-10 col-md-offset-1 arbody bodyColor" style="padding-top:20px; padding-bottom:20px;">
                 <?php 
                 $i=0; $j=0; $k=0;
                 while($i<3){

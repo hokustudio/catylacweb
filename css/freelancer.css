@@ -152,6 +152,8 @@ header .intro-text .skills {
     transition: all .3s;
 }
 
+
+
 @media(min-width:768px) {
     .navbar-fixed-top-menu {
         position: fixed;
@@ -206,6 +208,80 @@ header .intro-text .skills {
         height: 8px;
     }
 
+    .headerColor.headerRed{
+        background-color: #d44464;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    .headerColor.headerBlue{
+        background-color: #2881c8;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    .headerColor.headerYellow{
+        background-color: #fece52;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    .headerColor.headerGreen{
+        background-color: #aacc69;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .bodyColor.bodyRed{
+        background-color: #ea8ba0;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    .bodyColor.bodyBlue{
+        background-color: #71b1e4;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    .bodyColor.bodyYellow{
+        background-color: #f9dc91;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    .bodyColor.bodyGreen{
+        background-color: #c4df9c;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .footerColor.footerRed{
+        background-color: #df4265;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    .footerColor.footerBlue{
+        background-color: #2381cc;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    .footerColor.footerYellow{
+        background-color: #ffcf51;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    .footerColor.footerGreen{
+        background-color: #aacd69;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
 }
 
 .navbar {

@@ -1,5 +1,5 @@
         <footer class="text-center">
-            <div class="col-lg-12 panelFooter">
+            <div class="col-lg-12 panelFooter footerColor">
                 <div class="cpy">Copyright &copy; 2015 | All Right Reserved</div>
             </div>
         </footer>

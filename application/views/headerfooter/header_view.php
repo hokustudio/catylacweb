@@ -35,7 +35,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="scndline navbar navbar-default navbar-fixed-top">
+    <nav class="scndline navbar navbar-default navbar-fixed-top headerColor">
         <div class="topline"></div>
         <div class="container">
             
@@ -93,3 +93,17 @@
                 <!-- /.navbar-collapse -->
         </div>
     </nav>
+   <div class="container" style="margin-top:120px;">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="switchCol">    
+                    <ul>
+                        <li id="blueS" class="btn-switch"></li> 
+                        <li id="greenS" class="btn-switch"></li>
+                        <li id="redS" class="btn-switch"></li>
+                        <li id="yellowS" class="btn-switch"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
