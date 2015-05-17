@@ -1,4 +1,3 @@
-<body>
     <div class="container" style="margin-top:120px;">
         <div class="row">
             <div class="col-md-12">
@@ -14,14 +13,16 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                
                     <div class="col-md-12">
-                        <h1 class="title">Tips Mengecat Rumah</h1>
+                        <h1 class="title"><?php echo $title ?></h1>
                         <div class="meta">
-                            <span class="date">5 Februari 2015</span>
+                            <span class="date"><?php echo $date ?></span>
                             <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
                             <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
                         </div>
-                        <img class="img-responsive" src="images/ar1.jpg" alt="catylac"/>
-                        <p class="content" style="margin-top:20px;">    Selain sebagai tempat bunga, vas bunga, juga bisa dijadikan hiasan untuk mempercantik rumah. Bentuknya yang unik dan kreatif memberi kesan tersendiri. Berpadu dengan dinding bercat warna cerah keindahan yang artistic langsung terasa. Dan bila vas berisi bunga, nuansa fresh dan segar akan selalu hadir di rumah Anda. Jadi terpikir untuk meletakkan vas bunga di salah satu sudut rumah? Lakukan saja</p>
+                        <img class="img-responsive" src="<?php echo base_url().'images/ar1.jpg' ?>" alt="catylac"/>
+                        <p class="content" style="margin-top:20px;">
+                            <?php echo $content ?>
+                        </p>
                     </div>
                     <div class="col-md-12" style="margin-top:20px;">
                         <a class="btn btn-facebook" href="#">
@@ -44,7 +45,7 @@
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
-                                        <img src="images/tekno.jpg"/>
+                                        <img src="<?php echo base_url().'images/tekno.jpg' ?>"/>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
@@ -60,7 +61,7 @@
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
-                                        <img src="images/wall.jpg"/>
+                                        <img src="<?php echo base_url().'images/wall.jpg'?>"/>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
@@ -77,7 +78,7 @@
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
-                                        <img src="images/ruangkecil.jpg"/>
+                                        <img src="<?php echo base_url().'images/ruangkecil.jpg'?>"/>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
@@ -92,7 +93,7 @@
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
-                                        <img src="images/tips.jpg"/>
+                                        <img src="<?php echo base_url().'images/tips.jpg'?>"/>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
@@ -149,7 +150,7 @@
                         </div>
                     </div>
                     <div class="col-md-12" style="margin-top:20px; background-color:#f1c143; padding-top:20px; padding-bottom:20px;">
-                            <img class="img-responsive" src="images/tinting.jpg" alt="Padu padan warna kesukaan"/>
+                            <img class="img-responsive" src="<?php echo base_url().'images/tinting.jpg'?>" alt="Padu padan warna kesukaan"/>
                             <h1 class="title">Mau Eksplorasi Warna!? Tinting-in aja….</h1>
                             <div class="meta">
                                 <span class="date">5 Februari 2015</span>
@@ -160,7 +161,7 @@
                             <a href="tinting.php">read more</a></p>
                             <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                                 <div class="col-md-4" style="padding:0px;">
-                                    <img class="img-responsive" src="images/exterioe.jpg" alt="cat"/>
+                                    <img class="img-responsive" src="<?php echo base_url().'images/exterioe.jpg'?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
                                     <h1 class="title2"><a href="tips-mengecat-exterior.php">Waktu yang Tepat Mengecat Exterior</a></h1>
@@ -174,7 +175,7 @@
 
                              <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                                 <div class="col-md-4" style="padding:0px;">
-                                    <img class="img-responsive" src="images/ruang.jpg" alt="cat"/>
+                                    <img class="img-responsive" src="<?php echo base_url().'images/ruang.jpg'?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
                                     <h1 class="title2"><a href="Ruang-kerja-minimalis.php">Menciptakan Ruang Baca dan Kerja di Rumah Minimalis</a></h1>

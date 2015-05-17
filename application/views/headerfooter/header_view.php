@@ -12,12 +12,12 @@
     <title>Catylac | Warna-warni Indonesia</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url().'css/bootstrap.min.css' ?>" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/portfolio-item.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="<?php echo base_url().'css/portfolio-item.css' ?>" rel="stylesheet">
+    <link href="<?php echo base_url().'css/style.css' ?>" rel="stylesheet">
+    <link href="<?php echo base_url().'css/freelancer.css' ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,7 +28,7 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="css/bootstrap-social.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url().'css/bootstrap-social.css' ?>" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -41,8 +41,8 @@
             
            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand hidden-sm hidden-xs" href="#"><img class="img-brand" src="images/logo.png"/></a>
-                <a class="navbar-brand hidden-lg hidden-md" href="#"><img class="img-brand-sm" src="images/logo.png"/></a>
+                <a class="navbar-brand hidden-sm hidden-xs" href="#"><img class="img-brand" src="<?php echo base_url().'images/logo.png'?>"/></a>
+                <a class="navbar-brand hidden-lg hidden-md" href="#"><img class="img-brand-sm" src="<?php echo base_url().'images/logo.png'?>"/></a>
             </div>
         </div>
         <!-- /.container -->

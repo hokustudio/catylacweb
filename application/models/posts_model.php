@@ -3,7 +3,7 @@
 class posts_model extends CI_Model {
 	public function GetPost($id)
 	{
-		$query = "SELECT * FROM cat_posts WHERE id='".$id."';";
+		$query = "SELECT * FROM cat_posts WHERE id=".$id;
 		$result = $this->db->query($query);
         $result = $result->result_array();
 		return $result;
