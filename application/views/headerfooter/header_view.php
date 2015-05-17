@@ -87,7 +87,19 @@
 
                 <ul class="nav navbar-nav" style="float: right">
                     <li><a href="#contact" class="navbar-nav pull-right" style="color:#fff; background-color:#c4df9b;">Contact</a></li>
-                    <li><a href="#contact" class="navbar-nav pull-right" style="color:#fff; background-color:#ed9979;">Login | Register</a></li>
+                    <li><a href="<?php if ($this->session->userdata('logged_in')) {
+                        echo base_url().'logout';
+                    } 
+                    else {
+                        echo base_url().'login';
+                    } ?>" class="navbar-nav pull-right" style="color:#fff; background-color:#ed9979;">
+                        <?php 
+                            if($this->session->userdata('logged_in'))
+                                echo "Logout";
+                            else {
+                                echo "Login | Register";
+                            }
+                        ?></a></li>
                 </ul>
             </div>
                 <!-- /.navbar-collapse -->

@@ -63,10 +63,8 @@ class catylacadmin24052015 extends CI_Controller {
                     $this->session->set_userdata($array_items);
                 }
 
-                //if($row['user_role'] == 1)
-                	redirect(site_url('catylacadmin24052015/home'));
-                //else
-                //	echo "helo ".$row['user_name']." dihalaman client";
+                $this->usermodel->lastloginupdate($row['id']);
+                redirect(site_url('catylacadmin24052015/home'));
             }
             else {
             	echo "username or pass invalid";
