@@ -5,7 +5,7 @@
                     <div class="col-md-12">
                         <div class="cumbread">
                             <a href="<?php echo base_url().'home' ?>">Beranda</a><span> > </span><a href="#">Inspirasi</a><span> > </span><a>Tips & Trik</a>
-                            <span> > </span><a href="<?php echo current_url() ?>"><?php echo $title ?></a>
+                            <span> > </span><a href="<?php echo current_url() ?>"><?php echo $on['title'] ?></a>
                         </div>
                     </div>
                 </div>
@@ -14,15 +14,15 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                
                     <div class="col-md-12">
-                        <h1 class="title"><?php echo $title ?></h1>
+                        <h1 class="title"><?php echo $on['title'] ?></h1>
                         <div class="meta">
-                            <span class="date"><?php echo $date ?></span>
+                            <span class="date"><?php echo $on['date'] ?></span>
                             <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
                             <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
                         </div>
                         <img class="img-responsive" src="<?php echo base_url().'images/ar1.jpg' ?>" alt="catylac"/>
                         <p class="content" style="margin-top:20px;">
-                            <?php echo $content ?>
+                            <?php echo $on['content'] ?>
                         </p>
                     </div>
                     <div class="col-md-12" style="margin-top:20px;">
@@ -152,11 +152,11 @@
                     </div>
                     <div class="col-md-12" style="margin-top:20px; background-color:#f1c143; padding-top:20px; padding-bottom:20px;">
                             <img class="img-responsive" src="<?php echo base_url().'images/tinting.jpg'?>" alt="Padu padan warna kesukaan"/>
-                            <h1 class="title">Mau Eksplorasi Warna!? Tinting-in aja….</h1>
+                            <h1 class="title"><?php echo $popular['title'][0] ?></h1>
                             <div class="meta">
-                                <span class="date">5 Februari 2015</span>
+                                <span class="date"><?php echo $popular['date'][0] ?></span>
                                 <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                                <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
+                                <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][0] ?></span>
                             </div>
                             <p class="content">Agar rumah kesayangan terlihat indah sering kali kita ingin mengecatnya dengan warna istimewa hasil dari eksplorasi ide sendiri.
                             <a href="tinting.php">read more</a></p>
@@ -165,11 +165,11 @@
                                     <img class="img-responsive" src="<?php echo base_url().'images/exterioe.jpg'?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
-                                    <h1 class="title2"><a href="tips-mengecat-exterior.php">Waktu yang Tepat Mengecat Exterior</a></h1>
+                                    <h1 class="title2"><a href="tips-mengecat-exterior.php"><?php echo $popular['title'][1] ?></a></h1>
                                     <div class="meta">
-                                        <span class="date">5 Februari 2015</span>
+                                        <span class="date"><?php echo $popular['date'][1] ?></span>
                                         <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
+                                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][1] ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -179,11 +179,11 @@
                                     <img class="img-responsive" src="<?php echo base_url().'images/ruang.jpg'?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
-                                    <h1 class="title2"><a href="Ruang-kerja-minimalis.php">Menciptakan Ruang Baca dan Kerja di Rumah Minimalis</a></h1>
+                                    <h1 class="title2"><a href="Ruang-kerja-minimalis.php"><?php echo $popular['title'][2] ?></a></h1>
                                     <div class="meta">
-                                        <span class="date">5 Februari 2015</span>
+                                        <span class="date"><?php echo $popular['date'][2] ?></span>
                                         <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
+                                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][2] ?></span>
                                     </div>
                                 </div>
                             </div>

@@ -15,15 +15,41 @@ class Posts extends CI_Controller {
 	{
 		$this->load->model("posts_model");
 		$posts = $this->posts_model->GetPost($id);
-
+		$data = array(
+			'on' => array(),
+			'popular' => array()
+			);
 		date_default_timezone_set('Asia/Jakarta');
 		foreach ($posts as $post) {
-			$data['title'] =  $post['title'];
-			$data['content'] = $post['content'];
+			$data['on']['title'] =  $post['title'];
+			$data['on']['content'] = $post['content'];
 			$date = date_create($post['date_modified']);
-			$data['date'] = date_format($date,"M,d Y");
-			$data['tag'] = $post['tag_id'];
-			$data['category'] = $post['category'];
+			$data['on']['date'] = date_format($date,"M,d Y");
+			$data['on']['tag'] = $post['tag_id'];
+			$data['on']['category'] = $post['category'];
+		}
+
+		$pops = $this->posts_model->GetPopularPosts(3);
+
+		$i=0;
+		date_default_timezone_set('Asia/Jakarta');
+		foreach ($pops as $pop) {
+			$data['popular']['id'][$i] =  $pop['id'];
+
+			$data['popular']['title'][$i] =  $pop['title'];
+
+			$data['popular']['content'][$i] = strip_tags($pop['content']);
+			
+			$date = date_create($pop['date_modified']);
+			$data['popular']['date'][$i] = date_format($date,"M,d Y");
+
+			$data['popular']['tag'][$i] = $pop['tag_id'];
+
+			$data['popular']['category'][$i] = $pop['category'];
+
+			$data['popular']['view'][$i] = $pop['count'];
+
+			$i++;
 		}
 
     	$this->load->view('headerfooter/header_view');
