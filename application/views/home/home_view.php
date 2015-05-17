@@ -29,7 +29,11 @@
                             <div class="img-body">
                                 <img src="images/ruang.jpg" alt="Padu padan warna kesukaan"/>
                             </div>
-                            <h1 class="title"><?php echo $title[$k] ?></h1>
+                            <h1 class="title">
+                                <a href="<?php echo base_url().'posts/post/'; echo $id[$k] ?>">
+                                    <?php echo $title[$k] ?>
+                                </a>
+                            </h1>
                             <div class="meta">
                                 <span class="date"><?php echo $date[$k] ?></span>
                                 <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
@@ -41,7 +45,7 @@
                         </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top:-12px;"> 
-                            <a href="Ruang-kerja-minimalis.php">read more</a>
+                            <a href="<?php echo base_url().'posts/post/'; echo $id[$k] ?>">read more</a>
                         </div>
                     </div>
                         <?php $j++; $k++; continue;} ?>
@@ -52,7 +56,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h1 class="title2"><a href="dapur.php"><?php echo $title[$k] ?></a></h1>
+                                <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $id[$k] ?>"><?php echo $title[$k] ?></a></h1>
                                 <div class="meta">
                                     <span class="date"><?php echo $date[$k] ?></span>
                                     <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>

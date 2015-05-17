@@ -61,7 +61,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a style="color:#fff; background-color:#ca3959;" href="home">Beranda</a>
+                        <a style="color:#fff; background-color:#ca3959;" href="<?php echo base_url().'home' ?>">Beranda</a>
                     </li>
                     <li class="dropdown">
                         <a style="color:#fff; background-color:#ed944d;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Inspirasi <span class="caret"></span></a>

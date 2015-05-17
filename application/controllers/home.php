@@ -8,6 +8,8 @@ class Home extends CI_Controller {
 		$i=0;
 		date_default_timezone_set('Asia/Jakarta');
 		foreach ($posts as $post) {
+			$data['id'][$i] =  $post['id'];
+
 			$data['title'][$i] =  $post['title'];
 
 			$data['content'][$i] = strip_tags($post['content']);
