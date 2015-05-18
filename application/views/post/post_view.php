@@ -20,7 +20,7 @@
                             <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
                             <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
                         </div>
-                        <img class="img-responsive" src="<?php echo base_url().'images/ar1.jpg' ?>" alt="catylac"/>
+                        <img class="img-responsive" src="<?php echo base_url().'assets/images/ar1.jpg' ?>" alt="catylac"/>
                         <p class="content" style="margin-top:20px;">
                             <?php echo $on['content'] ?>
                         </p>
@@ -46,7 +46,7 @@
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
-                                        <img src="<?php echo base_url().'images/tekno.jpg' ?>"/>
+                                        <img src="<?php echo base_url().'assets/images/tekno.jpg' ?>"/>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
@@ -62,7 +62,7 @@
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
-                                        <img src="<?php echo base_url().'images/wall.jpg'?>"/>
+                                        <img src="<?php echo base_url().'assets/images/wall.jpg'?>"/>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
@@ -79,7 +79,7 @@
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
-                                        <img src="<?php echo base_url().'images/ruangkecil.jpg'?>"/>
+                                        <img src="<?php echo base_url().'assets/images/ruangkecil.jpg'?>"/>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
@@ -94,7 +94,7 @@
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
-                                        <img src="<?php echo base_url().'images/tips.jpg'?>"/>
+                                        <img src="<?php echo base_url().'assets/images/tips.jpg'?>"/>
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                     <div class="col-md-12" style="margin-top:20px; background-color:#f1c143; padding-top:20px; padding-bottom:20px;">
-                            <img class="img-responsive" src="<?php echo base_url().'images/tinting.jpg'?>" alt="Padu padan warna kesukaan"/>
+                            <img class="img-responsive" src="<?php echo base_url().'assets/images/tinting.jpg'?>" alt="Padu padan warna kesukaan"/>
                             <h1 class="title"><?php echo $popular['title'][0] ?></h1>
                             <div class="meta">
                                 <span class="date"><?php echo $popular['date'][0] ?></span>
@@ -162,7 +162,7 @@
                             <a href="tinting.php">read more</a></p>
                             <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                                 <div class="col-md-4" style="padding:0px;">
-                                    <img class="img-responsive" src="<?php echo base_url().'images/exterioe.jpg'?>" alt="cat"/>
+                                    <img class="img-responsive" src="<?php echo base_url().'assets/images/exterioe.jpg'?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
                                     <h1 class="title2"><a href="tips-mengecat-exterior.php"><?php echo $popular['title'][1] ?></a></h1>
@@ -176,7 +176,7 @@
 
                              <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                                 <div class="col-md-4" style="padding:0px;">
-                                    <img class="img-responsive" src="<?php echo base_url().'images/ruang.jpg'?>" alt="cat"/>
+                                    <img class="img-responsive" src="<?php echo base_url().'assets/images/ruang.jpg'?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
                                     <h1 class="title2"><a href="Ruang-kerja-minimalis.php"><?php echo $popular['title'][2] ?></a></h1>
