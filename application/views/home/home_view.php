@@ -3,16 +3,16 @@
                 <div class="col-md-12 col-lg-12">
                     <div class="img-left col-md-7 col-lg-8">
                         <h1 class="featured big" id="pink">Tren Warna Cat 2015</h1>
-                        <img src="<?php echo base_url().'images/ruangkecil.jpg'?>"/>
+                        <img src="<?php echo base_url().'assets/images/ruangkecil.jpg'?>"/>
                     </div>
                     <div class="img-right-col col-md-5 col-lg-4">
                         <div class="img-right col-md-12 col-lg-12">
                             <h1 class="featured" id="green">Tips Hemat Mengecat</h1>
-                            <img src="<?php echo base_url().'images/ar1.jpg'?>" />
+                            <img src="<?php echo base_url().'assets/images/ar1.jpg'?>" />
                         </div>
                         <div class="img-right col-md-12 col-lg-12" style="margin-top:10px;">
                             <h1 class="featured" id="blue">Warna Cat Minimalis</h1>
-                            <img src="<?php echo base_url().'images/ruang.jpg'?>"/>
+                            <img src="<?php echo base_url().'assets/images/ruang.jpg'?>"/>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                         <div class="body-col">    
                             <div class="img-body">
-                                <img src="images/ruang.jpg" alt="Padu padan warna kesukaan"/>
+                                <img src="assets/images/ruang.jpg" alt="Padu padan warna kesukaan"/>
                             </div>
                             <h1 class="title">
                                 <a href="<?php echo base_url().'posts/post/'; echo $id[$k] ?>">
@@ -52,7 +52,7 @@
                         <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                             <div class="col-md-4" style="padding:0px;">
                                 <div class="img-sm">
-                                    <img class="img-responsive" src="images/dapur.jpg" alt="cat"/>
+                                    <img class="img-responsive" src="assets/images/dapur.jpg" alt="cat"/>
                                 </div>
                             </div>
                             <div class="col-md-8">

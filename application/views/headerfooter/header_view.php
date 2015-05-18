@@ -12,12 +12,12 @@
     <title>Catylac | Warna-warni Indonesia</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url().'css/bootstrap.min.css' ?>" rel="stylesheet">
+    <link href="<?php echo base_url().'assets/css/bootstrap.min.css' ?>" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url().'css/portfolio-item.css' ?>" rel="stylesheet">
-    <link href="<?php echo base_url().'css/style.css' ?>" rel="stylesheet">
-    <link href="<?php echo base_url().'css/freelancer.css' ?>" rel="stylesheet">
+    <link href="<?php echo base_url().'assets/css/portfolio-item.css' ?>" rel="stylesheet">
+    <link href="<?php echo base_url().'assets/css/style.css' ?>" rel="stylesheet">
+    <link href="<?php echo base_url().'assets/css/freelancer.css' ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,10 +25,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url().'css/bootstrap-social.css' ?>" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url().'assets/css/bootstrap-social.css' ?>" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -41,8 +41,8 @@
             
            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand hidden-sm hidden-xs" href="<?php echo base_url().'home' ?>"><img class="img-brand" src="<?php echo base_url().'images/logo.png'?>"/></a>
-                <a class="navbar-brand hidden-lg hidden-md" href="<?php echo base_url().'home' ?>"><img class="img-brand-sm" src="<?php echo base_url().'images/logo.png'?>"/></a>
+                <a class="navbar-brand hidden-sm hidden-xs" href="<?php echo base_url().'home' ?>"><img class="img-brand" src="<?php echo base_url().'assets/images/logo.png'?>"/></a>
+                <a class="navbar-brand hidden-lg hidden-md" href="<?php echo base_url().'home' ?>"><img class="img-brand-sm" src="<?php echo base_url().'assets/images/logo.png'?>"/></a>
             </div>
         </div>
         <!-- /.container -->

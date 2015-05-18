@@ -1,0 +1,12 @@
+li.plt{
+	float: left;
+	position: relative;
+	border: solid 1px grey;
+	display: inline-block;
+	width: 61px;
+	height: 61px;
+	list-style: none;
+	cursor: pointer;
+	margin: 0 14px 14px 0;
+	border-radius: 0 10px 0 10px;
+}
