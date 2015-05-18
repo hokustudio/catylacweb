@@ -3,16 +3,16 @@
                 <div class="col-md-12 col-lg-12">
                     <div class="img-left col-md-7 col-lg-8">
                         <h1 class="featured big" id="pink">Tren Warna Cat 2015</h1>
-                        <img src="images/ruangkecil.jpg"/>
+                        <img src="<?php echo base_url().'images/ruangkecil.jpg'?>"/>
                     </div>
                     <div class="img-right-col col-md-5 col-lg-4">
                         <div class="img-right col-md-12 col-lg-12">
                             <h1 class="featured" id="green">Tips Hemat Mengecat</h1>
-                            <img src="images/ar1.jpg" />
+                            <img src="<?php echo base_url().'images/ar1.jpg'?>" />
                         </div>
                         <div class="img-right col-md-12 col-lg-12" style="margin-top:10px;">
                             <h1 class="featured" id="blue">Warna Cat Minimalis</h1>
-                            <img src="images/ruang.jpg"/>
+                            <img src="<?php echo base_url().'images/ruang.jpg'?>"/>
                         </div>
                     </div>
                 </div>
