@@ -21,21 +21,21 @@
 </head>
 <body>
 	<div class="container">
-		<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
-			<div class="panel-body">
+		<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4" style="margin-top: 100px;">
+			<div class="login-panel panel panel-default">
 				<form action="<?php echo base_url()."catylacadmin24052015/adminlogin"?>" method="post" class="form-signin">
-					<div class="col-md-10 col-md-offset-2">
-						<img src="images/logo.png" class="img-responsive"/> 
-			        </div>
-			        <div class="form-group">
-			        	<input type="text" class="form form-control" placeholder="Username" required="" autofocus="" name="username" value="<?php echo set_value('username')?>" />  
-				    </div>
-				    <div class="form-group">
-				    	<input type="password" class="form form-control" placeholder="Password"  required="" name="password" value="<?php echo set_value('password')?>" />  
-				    </div>
-				    <div class="form-group">
-				    	<button type="submit" class="btn btn-lg btn-primary btn-block" value="Log In" />Sign In</button>
-			 		</div>
+					<img src="images/logo.png" class="img-responsive" style="margin: 0 auto;"/> 
+			        <div class="panel-body">
+				        <div class="form-group">
+				        	<input type="text" class="form form-control" placeholder="Username" required="" autofocus="" name="username" value="<?php echo set_value('username')?>" />  
+					    </div>
+					    <div class="form-group">
+					    	<input type="password" class="form form-control" placeholder="Password"  required="" name="password" value="<?php echo set_value('password')?>" />  
+					    </div>
+					    <div class="form-group">
+					    	<button type="submit" class="btn btn-lg btn-primary btn-block" value="Log In" />Sign In</button>
+				 		</div>
+				 	</div>
 			 	</form>
 			 </div>
 		 </div>
