@@ -18,7 +18,7 @@
                         <div class="meta">
                             <span class="date"><?php echo $on['date'] ?></span>
                             <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                            <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
+                            <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $on['view'] ?></span>
                         </div>
                         <img class="img-responsive" src="<?php echo base_url().'images/ar1.jpg' ?>" alt="catylac"/>
                         <p class="content" style="margin-top:20px;">
@@ -42,7 +42,13 @@
                     </div>
 
                     <div class="col-md-12">
+                        <?php 
+                        $i=0; $k=0;
+                        while($i<2){?>
                         <div class="body-col">
+                            <?php 
+                            $j=0; 
+                            while ($j<2){ ?>
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
@@ -50,63 +56,19 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
-                                    <h1 class="title2"><a href="tekno-cat.php">Teknologi Cat Exterior Yang Perlu Anda Ketahui</a></h1>
+                                    <h1 class="title2"><a href="tekno-cat.php"><?php echo $recent['title'][$k] ?></a></h1>
                                     <div class="meta">
-                                        <span class="date">5 Februari 2015</span>
+                                        <span class="date"><?php echo $recent['date'][$k] ?></span>
                                         <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
+                                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $recent['view'][$k] ?></span>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
-                                <div class="col-md-4 col-lg-4">
-                                    <div class="img-sm">
-                                        <img src="<?php echo base_url().'images/wall.jpg'?>"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 col-lg-8">
-                                    <h1 class="title2"><a href="wall-sticker.php">Tips menempel wall sticker</a></h1>
-                                    <div class="meta">
-                                        <span class="date">5 Februari 2015</span>
-                                        <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php $j++; $k++; 
+                            } ?>
                         </div>
-                        <div class="body-col">
-                            <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
-                                <div class="col-md-4 col-lg-4">
-                                    <div class="img-sm">
-                                        <img src="<?php echo base_url().'images/ruangkecil.jpg'?>"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 col-lg-8">
-                                    <h1 class="title2"><a href="tips-membuat-ruangan-kecil-berkesan-luas.php">Tips membuat ruangan kecil berkesan luas</a></h1>
-                                    <div class="meta">
-                                        <span class="date">5 Februari 2015</span>
-                                        <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
-                                <div class="col-md-4 col-lg-4">
-                                    <div class="img-sm">
-                                        <img src="<?php echo base_url().'images/tips.jpg'?>"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 col-lg-8">
-                                    <h1 class="title2"><a href="tips-mengecat.php">Tips Mengecat Rumah Teknologi Cat yang Perlu Diketahui</a></h1>
-                                    <div class="meta">
-                                        <span class="date">5 Februari 2015</span>
-                                        <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                                        <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php $i++; 
+                        } ?>
                     </div>
 
                     <div class="col-md-12" style="margin-top:30px;">

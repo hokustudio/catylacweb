@@ -17,7 +17,8 @@ class Posts extends CI_Controller {
 		$posts = $this->posts_model->GetPost($id);
 		$data = array(
 			'on' => array(),
-			'popular' => array()
+			'popular' => array(),
+			'recent' => array()
 			);
 		date_default_timezone_set('Asia/Jakarta');
 		foreach ($posts as $post) {
@@ -27,6 +28,7 @@ class Posts extends CI_Controller {
 			$data['on']['date'] = date_format($date,"M,d Y");
 			$data['on']['tag'] = $post['tag_id'];
 			$data['on']['category'] = $post['category'];
+			$data['on']['view'] = $post['count'];
 		}
 
 		$pops = $this->posts_model->GetPopularPosts(3);
@@ -48,6 +50,28 @@ class Posts extends CI_Controller {
 			$data['popular']['category'][$i] = $pop['category'];
 
 			$data['popular']['view'][$i] = $pop['count'];
+
+			$i++;
+		}
+
+		$recent = $this->posts_model->GetRecentPosts(4);
+		$i=0;
+		date_default_timezone_set('Asia/Jakarta');
+		foreach ($recent as $r) {
+			$data['recent']['id'][$i] =  $r['id'];
+
+			$data['recent']['title'][$i] =  $r['title'];
+
+			$data['recent']['content'][$i] = strip_tags($r['content']);
+			
+			$date = date_create($r['date_modified']);
+			$data['recent']['date'][$i] = date_format($date,"M,d Y");
+
+			$data['recent']['tag'][$i] = $r['tag_id'];
+
+			$data['recent']['category'][$i] = $r['category'];
+
+			$data['recent']['view'][$i] = $r['count'];
 
 			$i++;
 		}

@@ -1,15 +1,10 @@
 <html>
 <head><!-- CDN hosted by Cachefly -->
-<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-//<![CDATA[
-        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-  //]]>
-  </script>
+    <script src="<?php echo base_url().'js/tinymce/tinymce.min.js'?>"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
 </head>
 <body>
 		<input />
-        <textarea name="area2" style="width: 100%;">
-       Some Initial Content was in this textarea
-		</textarea><br />
+        <textarea>Easy! You should check out MoxieManager!</textarea>
 </body>
 </html>
