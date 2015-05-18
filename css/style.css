@@ -218,7 +218,6 @@
 }
 
 .title2 a:hover{
-	text-decoration: none;
 }
 .meta{
 	overflow: hidden;
@@ -231,6 +230,9 @@
 }
 .content{
 	font-size: 14px;
+}
+.content a{
+	color: #2DF6FA;
 }
 .zero{
 	margin: 0;
