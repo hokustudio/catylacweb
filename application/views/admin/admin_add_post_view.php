@@ -12,7 +12,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-									<form role="form" action="<?php echo base_url()."catylacadmin24052015/addpost"?>" method="post" class="form-signin" enctype="multipart/form-data">
+									<form role="form" action="<?php echo base_url()."catylacadmin2015/addpost"?>" method="post" class="form-signin" enctype="multipart/form-data">
 										    <div class="form-group">
 										       	<input type="text" class="form form-control" placeholder="Title" required="" autofocus="" name="title" value="<?php echo set_value('title')?>" />  
 										    </div>

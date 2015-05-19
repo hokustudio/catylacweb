@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class catylacadmin24052015 extends CI_Controller {
+class catylacadmin2015 extends CI_Controller {
 
     function __construct()
     {
@@ -13,11 +13,12 @@ class catylacadmin24052015 extends CI_Controller {
         
 		if($this->session->userdata('logged_in')) 
 		{
-			redirect(site_url('catylacadmin24052015/home'));
+			redirect(site_url('catylacadmin2015/home'));
 		}
 		else 
 		{
-			$this->load->view('admin/admin_login_view.php');
+            $data['alert'] = "";
+			$this->load->view('admin/admin_login_view.php', $data);
             //redirect(site_url('catylacadmin24052015'));
 		}
       
@@ -26,7 +27,7 @@ class catylacadmin24052015 extends CI_Controller {
 	public function login()
 	{
 		//$this->load->view('admin/admin_login_view.php');
-	       redirect(site_url('catylacadmin24052015'));
+	       redirect(site_url('catylacadmin2015'));
            ///Klo Mau ada halaman baru lagi buat '/login'
     }
 
@@ -47,7 +48,7 @@ class catylacadmin24052015 extends CI_Controller {
 		else 
 		{
 			//$this->load->view('admin/admin_login_view.php');
-            redirect(site_url('catylacadmin24052015'));
+            redirect(site_url('catylacadmin2015'));
 		}
 	}
 
@@ -80,17 +81,18 @@ class catylacadmin24052015 extends CI_Controller {
                 }
 
                 $this->usermodel->lastloginupdate($row['id']);
-                redirect(site_url('catylacadmin24052015/home'));
+                redirect(site_url('catylacadmin2015/home'));
             }
             else {
-            	echo "username or pass invalid";
-            	$this->load->view('admin/admin_login_view.php');
+            	$data['alert'] = "username or pass invalid";
+            	$this->load->view('admin/admin_login_view.php',$data);
+                //redirect(site_url('catylacadmin24052015'),$alert);
                 
             }
         }
         else {
-        	echo "username or pass invalid";
-        	$this->load->view('admin/admin_login_view.php');
+        	$data['alert'] = "username or pass invalid";
+            $this->load->view('admin/admin_login_view.php',$data);
         }      
     }
 
@@ -100,7 +102,7 @@ class catylacadmin24052015 extends CI_Controller {
 		$this->session->unset_userdata('logged_in');
     	$this->session->sess_destroy();
     	//session_destroy();
-    	redirect(site_url('catylacadmin24052015'));
+    	redirect(site_url('catylacadmin2015'));
 	}
 
     public function addpost()
@@ -163,7 +165,12 @@ class catylacadmin24052015 extends CI_Controller {
             }
         
         }else{
-            $this->load->view('headerfooter-dashboard/header_view_dashboard.php');
+            $this->load->model("posts_model");
+            $post['allpost'] = count($this->posts_model->GetAllPost());
+            $post['draft'] = count($this->posts_model->GetDraftPost());
+            $post['published'] = count($this->posts_model->GetPublishedPost());
+
+            $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
             $this->load->view('admin/admin_add_post_view', $data);
             $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
         }
