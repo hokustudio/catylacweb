@@ -24,4 +24,10 @@ class posts_model extends CI_Model {
         $result = $result->result_array();
 		return $result;
 	}
+
+	public function insertPost($post_params, $media_params)
+	{
+		$query = $this->db->insert('post', $post_params);
+		$query = $this->db->insert('media', $media_params);
+	}
 } 
