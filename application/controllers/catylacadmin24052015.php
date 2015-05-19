@@ -9,7 +9,7 @@ class catylacadmin24052015 extends CI_Controller {
 		}
 		else 
 		{
-			$this->load->view('admin/admin_login_view.php');
+            $this->load->view('admin/admin_login_view.php');   
             //redirect(site_url('catylacadmin24052015'));
 		}
       
@@ -26,7 +26,9 @@ class catylacadmin24052015 extends CI_Controller {
 	{
 		if($this->session->userdata('logged_in')) 
 		{
-			$this->load->view('admin/admin_home_view.php');
+            $this->load->view('headerfooter-dashboard/header_view_dashboard.php');
+			//$this->load->view('admin/admin_home_view.php');
+            $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
 		}
 		else 
 		{
@@ -89,6 +91,8 @@ class catylacadmin24052015 extends CI_Controller {
 
     public function addpost()
     {
+        $this->load->view('headerfooter-dashboard/header_view_dashboard.php');
         $this->load->view('admin/admin_add_post_view');
+        $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
     }
 }
