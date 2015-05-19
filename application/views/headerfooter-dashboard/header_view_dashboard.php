@@ -85,10 +85,27 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        
                         <li>
-                            <a href="<?php echo base_url().'catylacadmin24052015/addpost' ?>"><i class="fa fa-edit fa-fw"></i> Post</a>
+                            <a href="<?php echo base_url().'catylacadmin24052015/addpost' ?>"><i class="fa fa-edit fa-fw"></i> New Post</a>
                         </li>
+                        <li>
+                            <a href="<?php echo base_url().'catylacadmin24052015/home' ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Posts <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">All(<?php echo $allpost ?>)</a>
+                                </li>
+                                <li>
+                                    <a href="#">Draft(<?php echo $draft ?>)</a>
+                                </li>
+                                <li>
+                                    <a href="#">Published(<?php echo $published ?>)</a>
+                                </li>
+                            </ul>
+                        </li>  
                         
                     </ul>
                 </div>

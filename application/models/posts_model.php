@@ -1,6 +1,30 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class posts_model extends CI_Model {
+	public function GetAllPost()
+	{
+		$query = "SELECT * FROM post";
+		$result = $this->db->query($query);
+		$result = $result->result_array();
+		return $result;
+	}
+
+	public function GetDraftPost()
+	{
+		$query = "SELECT * FROM post WHERE flag = '2'";
+		$result = $this->db->query($query);
+		$result = $result->result_array();
+		return $result;
+	}
+
+	public function GetPublishedPost()
+	{
+		$query = "SELECT * FROM post WHERE flag = '1'";
+		$result = $this->db->query($query);
+		$result = $result->result_array();
+		return $result;
+	}
+
 	public function GetPost($id)
 	{
 		$query = "SELECT * FROM post WHERE id=".$id;

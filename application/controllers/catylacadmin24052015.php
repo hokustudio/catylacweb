@@ -34,9 +34,15 @@ class catylacadmin24052015 extends CI_Controller {
 	{
 		if($this->session->userdata('logged_in')) 
 		{
-            $this->load->view('headerfooter-dashboard/header_view_dashboard.php');
+            $this->load->model("posts_model");
+            $post['allpost'] = count($this->posts_model->GetAllPost());
+            $post['draft'] = count($this->posts_model->GetDraftPost());
+            $post['published'] = count($this->posts_model->GetPublishedPost());
+
+            $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
 			$this->load->view('admin/admin_home_view.php');
             $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
+
 		}
 		else 
 		{
