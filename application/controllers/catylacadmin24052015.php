@@ -89,6 +89,17 @@ class catylacadmin24052015 extends CI_Controller {
 
     public function addpost()
     {
-        $this->load->view('admin/admin_add_post_view');
+        $data['content'] = NULL;
+        $data['title'] = NULL;
+        $data['A'] = "Aaaaaaaa";
+        if (!empty($_POST['title']) && !empty($_POST['content'])) {
+            $data['A'] = "Aaaaaaaa";
+            $data['content'] = $_POST['content'];
+            $data['title'] = $_POST['title'];
+            $this->load->view('admin/admin_add_post_view', $data);
+        }else{
+            $this->load->view('admin/admin_add_post_view', $data);
+        }
+            
     }
 }
