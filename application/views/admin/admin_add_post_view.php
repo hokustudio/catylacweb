@@ -1,9 +1,7 @@
-<html>
-<head><!-- CDN hosted by Cachefly -->
+
     <script src="<?php echo base_url().'assets/js/tinymce/tinymce.min.js'?>"></script>
     <script>tinymce.init({selector:'textarea'});</script>
-</head>
-<body>
+
 		<div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">New Post</h1>
@@ -36,6 +34,3 @@
             <!-- /.col-lg-12 -->
         </div>
 		
-       
-</body>
-</html>
