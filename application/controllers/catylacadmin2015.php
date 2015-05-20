@@ -290,7 +290,9 @@ class catylacadmin2015 extends CI_Controller {
             else
             {
                 $data['image'] = array('upload_data' => $this->upload->data());
+                $this->load->view('headerfooter-dashboard/header_view_dashboard.php');
                 $this->load->view('admin/admin_add_post_view', $data);
+                $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
 
                 $date = date('Y-m-d H:i:s', time());
                 $post_params = array(
