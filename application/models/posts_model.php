@@ -3,7 +3,7 @@
 class posts_model extends CI_Model {
 	public function GetAllPost()
 	{
-		$query = "SELECT * FROM post";
+		$query = "SELECT * FROM post ORDER BY date_modified DESC";
 		$result = $this->db->query($query);
 		$result = $result->result_array();
 		return $result;

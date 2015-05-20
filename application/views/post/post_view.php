@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
-                                    <h1 class="title2"><a href="tekno-cat.php"><?php echo $recent['title'][$k] ?></a></h1>
+                                    <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $recent['id'][$k] ?>"><?php echo $recent['title'][$k] ?></a></h1>
                                     <div class="meta">
                                         <span class="date"><?php echo $recent['date'][$k] ?></span>
                                         <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
@@ -85,7 +85,7 @@
                                     <input class="form-control" type="text" name="website" id="website" placeholder="Website"/> 
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="3">Comment</textarea>
+                                    <textarea class="form-control" rows="3"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
@@ -114,20 +114,20 @@
                     </div>
                     <div class="col-md-12" style="margin-top:20px; background-color:#f1c143; padding-top:20px; padding-bottom:20px;">
                             <img class="img-responsive" src="<?php echo base_url().'images/tinting.jpg'?>" alt="Padu padan warna kesukaan"/>
-                            <h1 class="title"><?php echo $popular['title'][0] ?></h1>
+                            <h1 class="title"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>"><?php echo $popular['title'][0] ?></a></h1>
                             <div class="meta">
                                 <span class="date"><?php echo $popular['date'][0] ?></span>
                                 <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
                                 <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][0] ?></span>
                             </div>
                             <p class="content">Agar rumah kesayangan terlihat indah sering kali kita ingin mengecatnya dengan warna istimewa hasil dari eksplorasi ide sendiri.
-                            <a href="tinting.php">read more</a></p>
+                            <a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>">read more</a></p>
                             <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                                 <div class="col-md-4" style="padding:0px;">
                                     <img class="img-responsive" src="<?php echo base_url().'images/exterioe.jpg'?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
-                                    <h1 class="title2"><a href="tips-mengecat-exterior.php"><?php echo $popular['title'][1] ?></a></h1>
+                                    <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][1] ?>"><?php echo $popular['title'][1] ?></a></h1>
                                     <div class="meta">
                                         <span class="date"><?php echo $popular['date'][1] ?></span>
                                         <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
@@ -141,7 +141,7 @@
                                     <img class="img-responsive" src="<?php echo base_url().'images/ruang.jpg'?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
-                                    <h1 class="title2"><a href="Ruang-kerja-minimalis.php"><?php echo $popular['title'][2] ?></a></h1>
+                                    <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][2] ?>"><?php echo $popular['title'][2] ?></a></h1>
                                     <div class="meta">
                                         <span class="date"><?php echo $popular['date'][2] ?></span>
                                         <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>

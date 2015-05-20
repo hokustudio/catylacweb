@@ -96,7 +96,7 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Posts <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">All(<?php echo $allpost ?>)</a>
+                                    <a href="<?php echo base_url().'catylacadmin2015/allpost' ?>">All(<?php echo $allpost ?>)</a>
                                 </li>
                                 <li>
                                     <a href="#">Draft(<?php echo $draft ?>)</a>

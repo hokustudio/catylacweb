@@ -11,8 +11,14 @@ class Posts extends CI_Controller {
 		
 	}
 
+	
+
 	public function post($id)
 	{
+		if(empty($id)){
+			//$this->load->view('home/home_view.php');
+			redirect(site_url('home'));
+		}else{
 		$this->load->model("posts_model");
 		$posts = $this->posts_model->GetPost($id);
 		$data = array(
@@ -79,5 +85,6 @@ class Posts extends CI_Controller {
     	$this->load->view('headerfooter/header_view');
       	$this->load->view('post/post_view', $data);
       	$this->load->view('headerfooter/footer_view');
+      }
 	}
 }
