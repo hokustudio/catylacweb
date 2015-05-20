@@ -88,7 +88,7 @@
                                     <textarea class="form-control" rows="3"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+                                    <button type="submit" class="btn btn-primary" value="submit"/>Submit</button>
                                 </div>
                             </form>
                         </div>
