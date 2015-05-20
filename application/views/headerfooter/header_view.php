@@ -72,7 +72,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a style="color:#fff; background-color:#f1c143;" href="#">Produk</a>
+                        <a style="color:#fff; background-color:#f1c143;" href="<?php echo base_url().'product' ?>">Produk</a>
                     </li>
                     <li>
                         <a style="color:#fff; background-color:#81c360" href="#">Cara Pengecatan</a>
