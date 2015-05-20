@@ -74,7 +74,7 @@
                     <div class="col-md-12" style="margin-top:30px;">
                         <div class="well">
                             <h4>Leave a Comment:</h4>
-                            <form action="<?php echo base_url()?>" role="form" method="post">
+                            <form role="form" action="<?php echo base_url()?>" method="post">
                                 <div class="form-group">
                                     <input class="form-control" type="text" name="name" id="name" placeholder="Name"/> 
                                 </div>
@@ -87,7 +87,9 @@
                                 <div class="form-group">
                                     <textarea class="form-control" rows="3"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+                                </div>
                             </form>
                         </div>
                     </div>

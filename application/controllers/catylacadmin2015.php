@@ -11,7 +11,7 @@ class catylacadmin2015 extends CI_Controller {
 	public function index()
 	{
         
-		if($this->session->userdata('logged_in')) 
+		if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
 		{
 			redirect(site_url('catylacadmin2015/home'));
 		}
@@ -33,7 +33,7 @@ class catylacadmin2015 extends CI_Controller {
 
 	public function home()
 	{
-		if($this->session->userdata('logged_in')) 
+		if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
 		{
             $this->load->model("posts_model");
             $post['allpost'] = count($this->posts_model->GetAllPost());
@@ -54,7 +54,7 @@ class catylacadmin2015 extends CI_Controller {
 
     public function allpost()
     {
-        if($this->session->userdata('logged_in')) 
+        if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
         {
             $this->load->model("posts_model");
             $posts = $this->posts_model->GetAllPost();
@@ -100,7 +100,7 @@ class catylacadmin2015 extends CI_Controller {
 
     public function editpost($id)
     {
-        if($this->session->userdata('logged_in')) 
+        if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
         {
             $this->load->model("posts_model");
 
@@ -223,7 +223,8 @@ class catylacadmin2015 extends CI_Controller {
                     $array_items = array(
                         'user_id' => $row['id'],
                         'user_name' => $row['username'],
-                        'logged_in' => true
+                        'user_role' => $row['role'],
+                        'logged_in_admin' => true
                         );
                     $this->session->set_userdata($array_items);
                 }
@@ -247,9 +248,8 @@ class catylacadmin2015 extends CI_Controller {
 
 	public function adminlogout()
 	{
-		$this->session->unset_userdata('logged_in');
+		$this->session->unset_userdata('logged_in_admin');
     	$this->session->sess_destroy();
-    	//session_destroy();
     	redirect(site_url('catylacadmin2015'));
 	}
 

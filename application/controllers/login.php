@@ -2,7 +2,7 @@
 
 class Login extends CI_Controller {
 	public function index() {
-		if($this->session->userdata('logged_in')) 
+		if($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2) 
 		{
       		redirect(site_url());
       	}
@@ -35,6 +35,7 @@ class Login extends CI_Controller {
                     $array_items = array(
                         'user_id' => $row['id'],
                         'user_name' => $row['username'],
+                        'user_role' => $row['role'],
                         'logged_in' => true
                         );
                     $this->session->set_userdata($array_items);
