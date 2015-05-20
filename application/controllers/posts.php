@@ -28,6 +28,9 @@ class Posts extends CI_Controller {
 			);
 		date_default_timezone_set('Asia/Jakarta');
 		foreach ($posts as $post) {
+			$image = $this->posts_model->getPostImage($post['id']);
+			$data['on']['image'] = $image[0];
+
 			$data['on']['title'] =  $post['title'];
 			$data['on']['content'] = $post['content'];
 			$date = date_create($post['date_modified']);
@@ -43,6 +46,8 @@ class Posts extends CI_Controller {
 		date_default_timezone_set('Asia/Jakarta');
 		foreach ($pops as $pop) {
 			$data['popular']['id'][$i] =  $pop['id'];
+			$image = $this->posts_model->getPostImage($pop['id']);
+			$data['popular']['image'][$i] = $image[0];
 
 			$data['popular']['title'][$i] =  $pop['title'];
 
@@ -65,6 +70,9 @@ class Posts extends CI_Controller {
 		date_default_timezone_set('Asia/Jakarta');
 		foreach ($recent as $r) {
 			$data['recent']['id'][$i] =  $r['id'];
+
+			$image = $this->posts_model->getPostImage($r['id']);
+			$data['recent']['image'][$i] = $image[0];
 
 			$data['recent']['title'][$i] =  $r['title'];
 

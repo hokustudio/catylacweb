@@ -111,8 +111,8 @@ class catylacadmin2015 extends CI_Controller {
             $config['upload_path'] = './assets/images/uploads';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = '100000000';
-            $config['max_width']  = '2048';
-            $config['max_height']  = '2048';
+            $config['max_width']  = '10000';
+            $config['max_height']  = '10000';
 
             $this->load->library('upload', $config);
 
@@ -147,7 +147,7 @@ class catylacadmin2015 extends CI_Controller {
                     $post_params = array(
                         'title' => $data['title'],
                         'content' => $data['content'],
-                        'category' => json_encode($data['category']),
+                        'category' => $data['category'][0],
                         'date_modified' => $date,
                         'date_created' =>  $date,
                         'author_id' => 1
@@ -155,9 +155,8 @@ class catylacadmin2015 extends CI_Controller {
                     
                     $media_params = array(
                         'title' => $data['title'],
-                        'used_in' => 1,
                         'type' => 0,
-                        'url' => $data['image']['upload_data']['full_path'],
+                        'url' => base_url()."assets/images/uploads/".$data['image']['upload_data']['file_name'],
                         'date_created' => $date
                         );
                    // $this->posts_model->insertPost($post_params, $media_params);
@@ -256,12 +255,16 @@ class catylacadmin2015 extends CI_Controller {
     public function addpost()
     {
         $this->load->model("posts_model");
+
+        $post['allpost'] = count($this->posts_model->GetAllPost());
+        $post['draft'] = count($this->posts_model->GetDraftPost());
+        $post['published'] = count($this->posts_model->GetPublishedPost());  
         
         $config['upload_path'] = './assets/images/uploads';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = '100000000';
-        $config['max_width']  = '2048';
-        $config['max_height']  = '2048';
+        $config['max_width']  = '10000';
+        $config['max_height']  = '10000';
 
         $this->load->library('upload', $config);
 
@@ -283,14 +286,14 @@ class catylacadmin2015 extends CI_Controller {
             if ( ! $this->upload->do_upload('f_image'))
             {
                 $data['image'] = array('error' => $this->upload->display_errors());
-                $this->load->view('headerfooter-dashboard/header_view_dashboard.php');
+                $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
                 $this->load->view('admin/admin_add_post_view', $data);
                 $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
             }
             else
             {
                 $data['image'] = array('upload_data' => $this->upload->data());
-                $this->load->view('headerfooter-dashboard/header_view_dashboard.php');
+                $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
                 $this->load->view('admin/admin_add_post_view', $data);
                 $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
 
@@ -298,28 +301,26 @@ class catylacadmin2015 extends CI_Controller {
                 $post_params = array(
                     'title' => $data['title'],
                     'content' => $data['content'],
-                    'category' => json_encode($data['category']),
+                    'category' => $data['category'][0],
                     'date_modified' => $date,
                     'date_created' =>  $date,
-                    'author_id' => 1
+                    'author_id' => 1,
+                    'flag' => 2,
+                    'count' => 0
                     );
                 
                 $media_params = array(
                     'title' => $data['title'],
-                    'used_in' => 1,
                     'type' => 0,
-                    'url' => $data['image']['upload_data']['full_path'],
+                    'description' => "-",
+                    'url' => base_url()."assets/images/uploads/".$data['image']['upload_data']['file_name'],
                     'date_created' => $date
                     );
                 $this->posts_model->insertPost($post_params, $media_params);
             }
         
         }else{
-            $this->load->model("posts_model");
-            $post['allpost'] = count($this->posts_model->GetAllPost());
-            $post['draft'] = count($this->posts_model->GetDraftPost());
-            $post['published'] = count($this->posts_model->GetPublishedPost());
-
+            
             $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
             $this->load->view('admin/admin_add_post_view', $data);
             $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');

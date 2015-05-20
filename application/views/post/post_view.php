@@ -20,7 +20,7 @@
                             <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
                             <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $on['view'] ?></span>
                         </div>
-                        <img class="img-responsive" src="<?php echo base_url().'images/ar1.jpg' ?>" alt="catylac"/>
+                        <img class="img-responsive" src="<?php echo $on['image']['url'] ?>" alt="catylac"/>
                         <p class="content" style="margin-top:20px;">
                             <?php echo $on['content'] ?>
                         </p>
@@ -52,7 +52,7 @@
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="img-sm">
-                                        <img src="<?php echo base_url().'images/tekno.jpg' ?>"/>
+                                        <img src="<?php echo $recent['image'][$k]['url'] ?>" />
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-8">
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <div class="col-md-12" style="margin-top:20px; background-color:#f1c143; padding-top:20px; padding-bottom:20px;">
-                            <img class="img-responsive" src="<?php echo base_url().'images/tinting.jpg'?>" alt="Padu padan warna kesukaan"/>
+                            <img class="img-responsive" src="<?php echo $popular['image'][0]['url'] ?>" alt="Padu padan warna kesukaan"/>
                             <h1 class="title"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>"><?php echo $popular['title'][0] ?></a></h1>
                             <div class="meta">
                                 <span class="date"><?php echo $popular['date'][0] ?></span>
@@ -126,7 +126,7 @@
                             <a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>">read more</a></p>
                             <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                                 <div class="col-md-4" style="padding:0px;">
-                                    <img class="img-responsive" src="<?php echo base_url().'images/exterioe.jpg'?>" alt="cat"/>
+                                    <img class="img-responsive" src="<?php echo $popular['image'][1]['url'] ?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
                                     <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][1] ?>"><?php echo $popular['title'][1] ?></a></h1>
@@ -140,7 +140,7 @@
 
                              <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                                 <div class="col-md-4" style="padding:0px;">
-                                    <img class="img-responsive" src="<?php echo base_url().'images/ruang.jpg'?>" alt="cat"/>
+                                    <img class="img-responsive" src="<?php echo $popular['image'][2]['url'] ?>" alt="cat"/>
                                 </div>
                                 <div class="col-md-8">
                                     <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][2] ?>"><?php echo $popular['title'][2] ?></a></h1>

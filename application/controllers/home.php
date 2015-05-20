@@ -9,7 +9,8 @@ class Home extends CI_Controller {
 		date_default_timezone_set('Asia/Jakarta');
 		foreach ($posts as $post) {
 			$data['id'][$i] =  $post['id'];
-
+			$image = $this->posts_model->getPostImage($post['id']);
+			$data['image'][$i] = $image[0];
 			$data['title'][$i] =  $post['title'];
 
 			$data['content'][$i] = strip_tags($post['content']);
@@ -23,7 +24,7 @@ class Home extends CI_Controller {
 
 			$i++;
 		}
-
+		
     	$this->load->view('headerfooter/header_view');
       	$this->load->view('home/home_view', $data);
       	$this->load->view('headerfooter/footer_view');

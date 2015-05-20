@@ -27,7 +27,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                         <div class="body-col">    
                             <div class="img-body">
-                                <img src="assets/images/ruang.jpg" alt="Padu padan warna kesukaan"/>
+                                <img src="<?php echo $image[$k]['url'] ?>" alt="Padu padan warna kesukaan"/>
                             </div>
                             <h1 class="title">
                                 <a href="<?php echo base_url().'posts/post/'; echo $id[$k] ?>">
@@ -52,7 +52,7 @@
                         <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                             <div class="col-md-4" style="padding:0px;">
                                 <div class="img-sm">
-                                    <img class="img-responsive" src="assets/images/dapur.jpg" alt="cat"/>
+                                    <img class="img-responsive" src="<?php echo $image[$k]['url'] ?>" alt="cat"/>
                                 </div>
                             </div>
                             <div class="col-md-8">
