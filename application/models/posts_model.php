@@ -11,7 +11,7 @@ class posts_model extends CI_Model {
 
 	public function GetDraftPost()
 	{
-		$query = "SELECT * FROM post WHERE flag = '2'";
+		$query = "SELECT * FROM post WHERE flag = '2' ORDER BY date_modified DESC";
 		$result = $this->db->query($query);
 		$result = $result->result_array();
 		return $result;
@@ -19,7 +19,7 @@ class posts_model extends CI_Model {
 
 	public function GetPublishedPost()
 	{
-		$query = "SELECT * FROM post WHERE flag = '1'";
+		$query = "SELECT * FROM post WHERE flag = '1' ORDER BY date_modified DESC";
 		$result = $this->db->query($query);
 		$result = $result->result_array();
 		return $result;
@@ -109,7 +109,7 @@ class posts_model extends CI_Model {
 		return $result;
 	}
 
-	public function getPostCategory($id)
+	public function getPostCategoryName($id)
 	{
 		$query = "SELECT * FROM post_category WHERE post_id=".$id;
 		$result = $this->db->query($query);

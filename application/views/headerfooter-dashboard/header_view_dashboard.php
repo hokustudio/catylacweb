@@ -91,10 +91,10 @@
                                     <a href="<?php echo base_url().'catylacadmin2015/allpost' ?>">All(<?php echo $allpost ?>)</a>
                                 </li>
                                 <li>
-                                    <a href="#">Draft(<?php echo $draft ?>)</a>
+                                    <a href="<?php echo base_url().'catylacadmin2015/draftpost' ?>">Draft(<?php echo $draft ?>)</a>
                                 </li>
                                 <li>
-                                    <a href="#">Published(<?php echo $published ?>)</a>
+                                    <a href="<?php echo base_url().'catylacadmin2015/publishedpost' ?>">Published(<?php echo $published ?>)</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url().'catylacadmin2015/addcategory' ?>">Category</a>

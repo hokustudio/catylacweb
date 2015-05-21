@@ -52,8 +52,7 @@ class catylacadmin2015 extends CI_Controller {
 		}
 	}
 
-    public function allpost()
-    {
+    public function allPost(){
         if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
         {
             $this->load->model("posts_model");
@@ -62,6 +61,9 @@ class catylacadmin2015 extends CI_Controller {
             $post['allpost'] = count($posts);
             $post['draft'] = count($this->posts_model->GetDraftPost());
             $post['published'] = count($this->posts_model->GetPublishedPost());
+            $post['head_name'] = "All Post";
+
+            $data['total'] = $post['allpost'];
 
             date_default_timezone_set('Asia/Jakarta');
             $i = 0;
@@ -71,13 +73,109 @@ class catylacadmin2015 extends CI_Controller {
                 $date = date_create($pos['date_modified']);
                 $data['date'][$i] = date_format($date,"M,d Y");
                 $data['author'][$i] = "Admin";//$pos['author_id'];
-                $data['category'][$i] = $this->posts_model->getPostCategory($pos['id']);
+                $data['category'][$i] = $this->posts_model->getPostCategoryName($pos['id']);
                 switch ($pos['flag']) {
                     case 1: //published
                         $data['status'][$i] ="Published";
                         break;
                     case 2: //draft
                         $data['status'][$i] = "Drafted";
+                        break;
+                    default:
+                        $data['status'][$i] = "Deleted";
+                        break;
+                }
+                $i++;
+            }
+
+            $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
+            $this->load->view('admin/admin_all_post_view.php',$data);
+            $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
+
+        }
+        else 
+        {
+            //$this->load->view('admin/admin_login_view.php');
+            redirect(site_url('catylacadmin2015'));
+        }
+    }
+
+    public function draftPost(){
+        if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
+        {
+            $this->load->model("posts_model");
+            $posts = $this->posts_model->GetDraftPost();
+
+            $post['allpost'] = count($this->posts_model->GetAllPost());
+            $post['draft'] = count($posts);
+            $post['published'] = count($this->posts_model->GetPublishedPost());
+            $post['head_name'] = "Draft Post";
+
+            $data['total'] = $post['draft'];
+
+            date_default_timezone_set('Asia/Jakarta');
+            $i = 0;
+            foreach ($posts as $pos) {
+                $data['id'][$i] =  $pos['id'];
+                $data['title'][$i] =  $pos['title'];
+                $date = date_create($pos['date_modified']);
+                $data['date'][$i] = date_format($date,"M,d Y");
+                $data['author'][$i] = "Admin";//$pos['author_id'];
+                $data['category'][$i] = $this->posts_model->getPostCategoryName($pos['id']);
+                switch ($pos['flag']) {
+                    case 1: //published
+                        $data['status'][$i] ="Published";
+                        break;
+                    case 2: //draft
+                        $data['status'][$i] = "Draft";
+                        break;
+                    default:
+                        $data['status'][$i] = "Deleted";
+                        break;
+                }
+                $i++;
+            }
+
+            $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
+            $this->load->view('admin/admin_all_post_view.php',$data);
+            $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
+
+        }
+        else 
+        {
+            //$this->load->view('admin/admin_login_view.php');
+            redirect(site_url('catylacadmin2015'));
+        }
+    }
+
+    public function publishedPost(){
+        if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
+        {
+            $this->load->model("posts_model");
+            $posts = $this->posts_model->GetPublishedPost();
+
+            $post['allpost'] = count($this->posts_model->GetAllPost());
+            $post['draft'] = count($this->posts_model->GetDraftPost());
+            $post['published'] = count($posts);
+            $post['head_name'] = "Published Post";
+
+            $data['total'] = $post['published'];
+
+            date_default_timezone_set('Asia/Jakarta');
+            $i = 0;
+            foreach ($posts as $pos) {
+                $data['id'][$i] =  $pos['id'];
+                $data['title'][$i] =  $pos['title'];
+                $date = date_create($pos['date_modified']);
+                $data['date'][$i] = date_format($date,"M,d Y");
+                $data['author'][$i] = "Admin";//$pos['author_id'];
+                $data['category'][$i] = $this->posts_model->getPostCategoryName($pos['id']);
+                switch ($pos['flag']) {
+                    case 1: //published
+                        $data['status'][$i] ="Published";
+                        break;
+                    case 2: //draft
+                        $data['status'][$i] = "Draft";
                         break;
                     default:
                         $data['status'][$i] = "Deleted";
@@ -172,7 +270,7 @@ class catylacadmin2015 extends CI_Controller {
                     $date = date_create($pos['date_modified']);
                     $data['date'] = date_format($date,"M,d Y");
                     $data['author'] = "Admin";//$pos['author_id'];
-                    $data['category'] = $pos['category'];
+                    $data['category'] = $this->posts_model->getPostCategoryName($pos['id']);
                     switch ($pos['flag']) {
                         case 1: //published
                             $data['status'] ="Published";
