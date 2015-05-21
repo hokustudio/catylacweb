@@ -20,8 +20,6 @@ class Home extends CI_Controller {
 
 			//$data['tag'][$i] = $post['tag_id'];
 
-			$data['category'][$i] = $post['category'];
-
 			$i++;
 		}
 		

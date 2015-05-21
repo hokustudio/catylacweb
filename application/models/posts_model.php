@@ -11,7 +11,7 @@ class posts_model extends CI_Model {
 
 	public function GetDraftPost()
 	{
-		$query = "SELECT * FROM post WHERE flag = '2'";
+		$query = "SELECT * FROM post WHERE flag = '2' ORDER BY date_modified DESC";
 		$result = $this->db->query($query);
 		$result = $result->result_array();
 		return $result;
@@ -19,7 +19,7 @@ class posts_model extends CI_Model {
 
 	public function GetPublishedPost()
 	{
-		$query = "SELECT * FROM post WHERE flag = '1'";
+		$query = "SELECT * FROM post WHERE flag = '1' ORDER BY date_modified DESC";
 		$result = $this->db->query($query);
 		$result = $result->result_array();
 		return $result;
@@ -65,8 +65,8 @@ class posts_model extends CI_Model {
 	public function insertPost($post_params, $media_params)
 	{
 		$query1 = " 
-		INSERT INTO post (title,content, category, date_modified, date_created, author_id, flag, count) VALUES ('"
-			.$post_params['title']."','".$post_params['content']."','".$post_params['category']."','".$post_params['date_modified']."','"
+		INSERT INTO post (title,content, date_modified, date_created, author_id, flag, count) VALUES ('"
+			.$post_params['title']."','".$post_params['content']."','".$post_params['date_modified']."','"
 			.$post_params['date_created']."',".$post_params['author_id'].",".$post_params['flag'].",".$post_params['count'].");";
 		
 		$query2 = "SET @post_id = LAST_INSERT_ID();";
@@ -77,13 +77,22 @@ class posts_model extends CI_Model {
 		$query4 = "SET @media_id = LAST_INSERT_ID();";
 		
 		$query5 = "INSERT INTO post_media (post_id,media_id) VALUES(@post_id, @media_id);";
-		//print_r($query);
+		$i=0;
+		foreach ($post_params['category'] as $key => $value) {
+			$query6[$i] = "INSERT INTO post_category (post_id,category_id) VALUES(@post_id, ".$value.");";
+			$i++;
+		}
+		//print_r($post_params['category']);
 		$result = $this->db->query($query1);
 		$result = $this->db->query($query2);
 		$result = $this->db->query($query3);
 		$result = $this->db->query($query4);
 		$result = $this->db->query($query5);
-
+		$i=0;
+		foreach ($post_params['category'] as $key => $value) {
+			$result = $this->db->query($query6[$i]);
+			$i++;
+		}
 		//$query = $this->db->insert('post', $post_params);
 		//$query = $this->db->insert('media', $media_params);
 	}
@@ -98,5 +107,25 @@ class posts_model extends CI_Model {
 		$result = $this->db->query($query);
         $result = $result->result_array();
 		return $result;
+	}
+
+	public function getPostCategoryName($id)
+	{
+		$query = "SELECT * FROM post_category WHERE post_id=".$id;
+		$result = $this->db->query($query);
+        $result = $result->result_array();
+        $i=0;
+        foreach ($result as $cat_id) {
+        	$query = "SELECT * FROM category  WHERE id = ".$cat_id['category_id'];
+	        $name = $this->db->query($query);
+    	    $name = $name->result_array();
+    	    if($i==0){
+        		$allname = $name[0]['name'];
+    	    }else{
+    	    	$allname.=", ".$name[0]['name'];
+    		}
+    	    $i++;
+        }
+		return $allname;
 	}
 } 

@@ -122,7 +122,7 @@
                                 <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
                                 <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][0] ?></span>
                             </div>
-                            <p class="content">Agar rumah kesayangan terlihat indah sering kali kita ingin mengecatnya dengan warna istimewa hasil dari eksplorasi ide sendiri.
+                            <p class="content"><?php echo $popular['content'][0] ?>
                             <a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>">read more</a></p>
                             <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                                 <div class="col-md-4" style="padding:0px;">

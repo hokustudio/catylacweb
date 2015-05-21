@@ -3,10 +3,10 @@
         {selector:'textarea'}
     );
     </script>
-    
+
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Post</h1>
+                    <h1 class="page-header">Edit Post</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -25,11 +25,11 @@
 								    	        <textarea name="content" class="form-control" rows="10"><?php echo $content ?></textarea>
 										    </div>
 										    <div class="form-group">
-										    	<label>Choose Image:</label>
+										    	<label>Edit Image:</label>
 										    	<input type="file" name="f_image" id="f_image"/>
 										    </div>
 										    <div class="form-group">
-										    	<label>Choose Category:</label>
+										    	<label>Edit Category:</label>
 										    	<div class="checkbox">
 	                                                <label>
 	                                                    <input class="checkbox" type="checkbox" name="category[]" value="Tips & Trik">Tips & Trik
