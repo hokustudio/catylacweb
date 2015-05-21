@@ -79,12 +79,11 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="<?php echo base_url().'catylacadmin2015/addpost' ?>"><i class="fa fa-edit fa-fw"></i> New Post</a>
-                        </li>
-                        <li>
                             <a href="<?php echo base_url().'catylacadmin2015/home' ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
-
+                        <li>
+                            <a href="<?php echo base_url().'catylacadmin2015/addpost' ?>"><i class="fa fa-edit fa-fw"></i> New Post</a>
+                        </li>
                         <li>
                             <a href="<?php echo base_url().'catylacadmin2015/allpost' ?>"><i class="fa fa-files-o fa-fw"></i> Posts <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -97,9 +96,11 @@
                                 <li>
                                     <a href="#">Published(<?php echo $published ?>)</a>
                                 </li>
+                                <li>
+                                    <a href="<?php echo base_url().'catylacadmin2015/addcategory' ?>">Category</a>
+                                </li>
                             </ul>
-                        </li>  
-                        
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

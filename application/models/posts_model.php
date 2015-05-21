@@ -82,7 +82,7 @@ class posts_model extends CI_Model {
 			$query6[$i] = "INSERT INTO post_category (post_id,category_id) VALUES(@post_id, ".$value.");";
 			$i++;
 		}
-		//print_r($query);
+		//print_r($post_params['category']);
 		$result = $this->db->query($query1);
 		$result = $this->db->query($query2);
 		$result = $this->db->query($query3);
@@ -107,5 +107,25 @@ class posts_model extends CI_Model {
 		$result = $this->db->query($query);
         $result = $result->result_array();
 		return $result;
+	}
+
+	public function getPostCategory($id)
+	{
+		$query = "SELECT * FROM post_category WHERE post_id=".$id;
+		$result = $this->db->query($query);
+        $result = $result->result_array();
+        $i=0;
+        foreach ($result as $cat_id) {
+        	$query = "SELECT * FROM category  WHERE id = ".$cat_id['category_id'];
+	        $name = $this->db->query($query);
+    	    $name = $name->result_array();
+    	    if($i==0){
+        		$allname = $name[0]['name'];
+    	    }else{
+    	    	$allname.=", ".$name[0]['name'];
+    		}
+    	    $i++;
+        }
+		return $allname;
 	}
 } 

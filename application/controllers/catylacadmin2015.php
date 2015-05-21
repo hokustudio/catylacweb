@@ -71,7 +71,7 @@ class catylacadmin2015 extends CI_Controller {
                 $date = date_create($pos['date_modified']);
                 $data['date'][$i] = date_format($date,"M,d Y");
                 $data['author'][$i] = "Admin";//$pos['author_id'];
-                $data['category'][$i] = $pos['category'];
+                $data['category'][$i] = $this->posts_model->getPostCategory($pos['id']);
                 switch ($pos['flag']) {
                     case 1: //published
                         $data['status'][$i] ="Published";
@@ -349,6 +349,7 @@ class catylacadmin2015 extends CI_Controller {
                 $post_params = array(
                     'title' => $data['title'],
                     'content' => $data['content'],
+                    'category' => $data['category'],
                     'date_modified' => $date,
                     'date_created' =>  $date,
                     'author_id' => 1,
