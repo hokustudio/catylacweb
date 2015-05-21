@@ -71,7 +71,7 @@
                         } ?>
                     </div>
 
-                    <div class="col-md-12" style="margin-top:30px;">
+                    <!-- <div class="col-md-12" style="margin-top:30px;">
                         <div class="well">
                             <h4>Leave a Comment:</h4>
                             <form role="form" action="<?php echo base_url()?>" method="post">
@@ -93,12 +93,12 @@
                             </form>
                         </div>
                     </div>
-
+ -->
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="col-md-12 hidden-sm hidden-xs" style="padding-left:0px; padding-right:0px;">
-                        <form role="form">
+                        <form role="form" action="<?php echo base_url()?>">
                             <div class="input-group">
                                 <input class="form-control" type="text" name="search" id="search" placeholder="Search"/> 
                                 <div class="input-group-btn">
