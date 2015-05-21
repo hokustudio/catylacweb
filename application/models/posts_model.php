@@ -87,4 +87,16 @@ class posts_model extends CI_Model {
 		//$query = $this->db->insert('post', $post_params);
 		//$query = $this->db->insert('media', $media_params);
 	}
+	public function addCategory($params)
+	{
+		$result = $this->db->insert('category',$params);
+	}
+
+	public function getAllCategory()
+	{
+		$query = "SELECT * FROM category";
+		$result = $this->db->query($query);
+        $result = $result->result_array();
+		return $result;
+	}
 } 

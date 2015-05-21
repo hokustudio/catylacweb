@@ -252,6 +252,47 @@ class catylacadmin2015 extends CI_Controller {
     	redirect(site_url('catylacadmin2015'));
 	}
 
+    public function addCategory()
+    {
+        $this->load->model("posts_model");
+
+        $post['allpost'] = count($this->posts_model->GetAllPost());
+        $post['draft'] = count($this->posts_model->GetDraftPost());
+        $post['published'] = count($this->posts_model->GetPublishedPost());  
+
+        $data = array();
+    
+        if (!empty($_POST['name'])) {
+            $this->posts_model->addCategory($_POST);
+            $all = $this->posts_model->getAllCategory();
+            $post['allcategory'] = count($all);
+            $i=0;
+            foreach ($all as $one) {
+                $data['id'][$i] = $one['id'];   
+                $data['name'][$i] = $one['name'];   
+                $data['description'][$i] = $one['description'];
+                $i++;
+            }
+            $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
+            $this->load->view('admin/admin_add_category_view', $data);
+            $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
+            
+        }else{
+            $all = $this->posts_model->getAllCategory();
+            $post['allcategory'] = count($all);
+            $i=0;
+            foreach ($all as $one) {
+                $data['id'][$i] = $one['id'];
+                $data['name'][$i] = $one['name'];   
+                $data['description'][$i] = $one['description'];
+                $i++;   
+            }
+            $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
+            $this->load->view('admin/admin_add_category_view', $data);
+            $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');    
+        }
+    }
+
     public function addpost()
     {
         $this->load->model("posts_model");

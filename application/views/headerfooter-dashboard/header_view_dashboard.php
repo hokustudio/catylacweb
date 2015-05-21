@@ -35,13 +35,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="<?php echo base_url().'assets/js/tinymce/tinymce.min.js'?>"></script>
-    <script>
-    tinymce.init(
-        {selector:'textarea'}
-    );
-    </script>
-
-
 </head>
 
 <body>
