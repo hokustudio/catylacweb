@@ -65,8 +65,8 @@ class posts_model extends CI_Model {
 	public function insertPost($post_params, $media_params)
 	{
 		$query1 = " 
-		INSERT INTO post (title,content, category, date_modified, date_created, author_id, flag, count) VALUES ('"
-			.$post_params['title']."','".$post_params['content']."','".$post_params['category']."','".$post_params['date_modified']."','"
+		INSERT INTO post (title,content, date_modified, date_created, author_id, flag, count) VALUES ('"
+			.$post_params['title']."','".$post_params['content']."','".$post_params['date_modified']."','"
 			.$post_params['date_created']."',".$post_params['author_id'].",".$post_params['flag'].",".$post_params['count'].");";
 		
 		$query2 = "SET @post_id = LAST_INSERT_ID();";
@@ -77,13 +77,22 @@ class posts_model extends CI_Model {
 		$query4 = "SET @media_id = LAST_INSERT_ID();";
 		
 		$query5 = "INSERT INTO post_media (post_id,media_id) VALUES(@post_id, @media_id);";
+		$i=0;
+		foreach ($post_params['category'] as $key => $value) {
+			$query6[$i] = "INSERT INTO post_category (post_id,category_id) VALUES(@post_id, ".$value.");";
+			$i++;
+		}
 		//print_r($query);
 		$result = $this->db->query($query1);
 		$result = $this->db->query($query2);
 		$result = $this->db->query($query3);
 		$result = $this->db->query($query4);
 		$result = $this->db->query($query5);
-
+		$i=0;
+		foreach ($post_params['category'] as $key => $value) {
+			$result = $this->db->query($query6[$i]);
+			$i++;
+		}
 		//$query = $this->db->insert('post', $post_params);
 		//$query = $this->db->insert('media', $media_params);
 	}

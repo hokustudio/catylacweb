@@ -3,7 +3,7 @@
         {selector:'textarea'}
     );
     </script>
-    
+
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Post</h1>
@@ -26,20 +26,19 @@
 										    </div>
 										    <div class="form-group">
 										    	<label>Choose Image:</label>
-										    	<input type="file" name="f_image" id="f_image"/>
+										    	<input type="file" required="" name="f_image" id="f_image"/>
 										    </div>
 										    <div class="form-group">
 										    	<label>Choose Category:</label>
+										    	<?php 
+										    	for($i=0;$i<$allcategory;$i++){ ?>
+
 										    	<div class="checkbox">
 	                                                <label>
-	                                                    <input class="checkbox" type="checkbox" name="category[]" value="Tips & Trik">Tips & Trik
+	                                                    <input class="checkbox" type="checkbox" name="category[]" value="<?php echo $cat_id[$i] ?>"><?php echo $cat_name[$i] ?>
 	                                                </label>
 	                                            </div>
-										    	<div class="checkbox">
-	                                                <label>
-	                                                	<input class="checkbox" type="checkbox" name="category[]" value="Cara Pengecatan">Cara Pengecatan
-	                                                </label>
-										    </div>
+										    	<?php } ?>
 											<hr/>
 										    <div class="form-group text-right">
 										    	<button type="submit" class="btn btn-primary" value="Add post" />Add Post</button>

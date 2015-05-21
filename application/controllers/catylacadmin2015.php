@@ -309,6 +309,15 @@ class catylacadmin2015 extends CI_Controller {
 
         $this->load->library('upload', $config);
 
+        $all = $this->posts_model->getAllCategory();
+        $post['allcategory'] = count($all);
+        $i=0;
+        foreach ($all as $one) {
+            $data['cat_id'][$i] = $one['id'];
+            $data['cat_name'][$i] = $one['name'];   
+            $i++;   
+        }        
+
 
         $data['content'] = NULL;
         $data['title'] = NULL;
@@ -324,16 +333,14 @@ class catylacadmin2015 extends CI_Controller {
                 $data['category'][$i] = $value;
                 $i++;   
             }
-            if ( ! $this->upload->do_upload('f_image'))
-            {
+            if ( ! $this->upload->do_upload('f_image')){
                 $data['image'] = array('error' => $this->upload->display_errors());
                 $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
                 $this->load->view('admin/admin_add_post_view', $data);
                 $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
-            }
-            else
-            {
+            }else{
                 $data['image'] = array('upload_data' => $this->upload->data());
+
                 $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
                 $this->load->view('admin/admin_add_post_view', $data);
                 $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
@@ -342,7 +349,6 @@ class catylacadmin2015 extends CI_Controller {
                 $post_params = array(
                     'title' => $data['title'],
                     'content' => $data['content'],
-                    'category' => $data['category'][0],
                     'date_modified' => $date,
                     'date_created' =>  $date,
                     'author_id' => 1,
@@ -361,11 +367,9 @@ class catylacadmin2015 extends CI_Controller {
             }
         
         }else{
-            
             $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
             $this->load->view('admin/admin_add_post_view', $data);
             $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
-        }
-            
+        }            
     }
 }
