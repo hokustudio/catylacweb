@@ -111,7 +111,7 @@ class catylacadmin2015 extends CI_Controller {
                         $data['status'][$i] ="Published";
                         break;
                     case 2: //draft
-                        $data['status'][$i] = "Drafted";
+                        $data['status'][$i] = "Draft";
                         break;
                     default:
                         $data['status'][$i] = "Deleted";

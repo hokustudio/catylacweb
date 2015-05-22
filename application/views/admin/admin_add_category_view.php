@@ -12,15 +12,20 @@
 			<div class="panel-body">
 				<div class="row">
 					<div class="col-lg-12">
-						<ul>
+						<table class="table table-condensed">
+							<tr>
+								<td>Name</td>
+								<td>Description</td>
+							</tr>
 							<?php 
 							for($i=0;$i<$allcategory;$i++){ ?>
-							<li>
-								<a href= "<?php echo base_url().'catylacadmin2015/editcategory/'; echo $id[$i] ?>"><?php echo $name[$i] ?></a><span>   |   </span><?php echo $description[$i] ?>
-							</li>
+							<tr>
+								<td><a href= "<?php echo base_url().'catylacadmin2015/editcategory/'; echo $id[$i] ?>"><?php echo $name[$i] ?></a></td>
+								<td><?php echo $description[$i] ?></td>
+							</tr>
 							<?php	}
 							?>
-						</ul>
+						</table>
 					</div>
 				</div>
 				<div class="row">
