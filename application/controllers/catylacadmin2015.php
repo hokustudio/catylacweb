@@ -394,7 +394,7 @@ class catylacadmin2015 extends CI_Controller {
                 }
 
                 $this->usermodel->lastloginupdate($row['id']);
-                redirect(site_url('catylacadmin2015/home'));
+                redirect(site_url('catylacadmin2015/allpost'));
             }
             else {
             	$data['alert'] = "username or pass invalid";

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
     <title>Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url().'dashboard/bower_components/bootstrap/dist/css/bootstrap.min.css' ?>" rel="stylesheet">
@@ -78,6 +78,9 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="<?php echo base_url().'home' ?>"><i class="fa fa-files-o fa-fw"></i> Visit Home Page</a>
+                        </li>
                         <li>
                             <a href="<?php echo base_url().'catylacadmin2015/home' ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
