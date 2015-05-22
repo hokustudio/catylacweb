@@ -8,6 +8,12 @@ class catylacadmin2015 extends CI_Controller {
         $this->load->helper(array('form', 'url'));
     }
 
+    public function deletePost($id){
+        $this->load->model("posts_model");
+        $this->posts_model->deletePostByID($id);
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+
 	public function index()
 	{
         

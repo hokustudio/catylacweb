@@ -128,4 +128,13 @@ class posts_model extends CI_Model {
         }
 		return $allname;
 	}
+
+	public function deletePostByID($id)
+	{
+		$query1 = "DELETE FROM post WHERE id=".$id;
+		$query2 = "DELETE FROM post_media WHERE post_id=".$id;
+		$result = $this->db->query($query1);
+		$result = $this->db->query($query2);
+	}
+
 } 
