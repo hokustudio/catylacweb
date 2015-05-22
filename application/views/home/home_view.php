@@ -37,7 +37,7 @@
                             <div class="meta">
                                 <span class="date"><?php echo $date[$k] ?></span>
                                 <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
-                                <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $view[$i] ?></span>
+                                <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $view[$k] ?></span>
                             </div>
                             <p class="content">
                             <?php echo $content[$k]; ?>
@@ -60,7 +60,7 @@
                                 <div class="meta">
                                     <span class="date"><?php echo $date[$k] ?></span>
                                     <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
-                                    <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $view[$i] ?></span>
+                                    <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $view[$k] ?></span>
                                 </div>
                                 <p class="content">
                             </div>
