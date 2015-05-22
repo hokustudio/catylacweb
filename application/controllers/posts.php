@@ -20,6 +20,9 @@ class Posts extends CI_Controller {
 			redirect(site_url('home'));
 		}else{
 		$this->load->model("posts_model");
+		
+		$posts = $this->posts_model->addPostView($id);
+		
 		$posts = $this->posts_model->GetPost($id);
 		$data = array(
 			'on' => array(),

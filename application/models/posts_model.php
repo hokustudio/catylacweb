@@ -213,4 +213,8 @@ class posts_model extends CI_Model {
 		}
 	}
 
+	public function addPostView($id){
+		$query1 = "UPDATE post SET count = count+1 WHERE id=".$id;
+		$result = $this->db->query($query1);
+	}
 } 

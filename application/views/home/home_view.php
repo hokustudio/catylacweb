@@ -36,8 +36,8 @@
                             </h1>
                             <div class="meta">
                                 <span class="date"><?php echo $date[$k] ?></span>
-                                <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                                <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
+                                <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
+                                <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $view[$i] ?></span>
                             </div>
                             <p class="content">
                             <?php echo $content[$k]; ?>
@@ -59,8 +59,8 @@
                                 <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $id[$k] ?>"><?php echo $title[$k] ?></a></h1>
                                 <div class="meta">
                                     <span class="date"><?php echo $date[$k] ?></span>
-                                    <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
-                                    <span class="views"><span class="glyphicon glyphicon-eye-open"></span> 10</span>
+                                    <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
+                                    <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $view[$i] ?></span>
                                 </div>
                                 <p class="content">
                             </div>

@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 			$date = date_create($post['date_modified']);
 			$data['date'][$i] = date_format($date,"M,d Y");
 
-			//$data['tag'][$i] = $post['tag_id'];
+			$data['view'][$i] = $post['count'];
 
 			$i++;
 		}

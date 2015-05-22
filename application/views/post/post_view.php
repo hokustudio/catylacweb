@@ -17,7 +17,7 @@
                         <h1 class="title"><?php echo $on['title'] ?></h1>
                         <div class="meta">
                             <span class="date"><?php echo $on['date'] ?></span>
-                            <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
+                            <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
                             <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $on['view'] ?></span>
                         </div>
                         <img class="img-responsive" src="<?php echo $on['image']['url'] ?>" alt="catylac"/>
@@ -59,7 +59,7 @@
                                     <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $recent['id'][$k] ?>"><?php echo $recent['title'][$k] ?></a></h1>
                                     <div class="meta">
                                         <span class="date"><?php echo $recent['date'][$k] ?></span>
-                                        <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
+                                        <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
                                         <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $recent['view'][$k] ?></span>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                             <h1 class="title"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>"><?php echo $popular['title'][0] ?></a></h1>
                             <div class="meta">
                                 <span class="date"><?php echo $popular['date'][0] ?></span>
-                                <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
+                                <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
                                 <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][0] ?></span>
                             </div>
                             <p class="content"><?php echo $popular['content'][0] ?>
@@ -132,7 +132,7 @@
                                     <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][1] ?>"><?php echo $popular['title'][1] ?></a></h1>
                                     <div class="meta">
                                         <span class="date"><?php echo $popular['date'][1] ?></span>
-                                        <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
+                                        <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
                                         <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][1] ?></span>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
                                     <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][2] ?>"><?php echo $popular['title'][2] ?></a></h1>
                                     <div class="meta">
                                         <span class="date"><?php echo $popular['date'][2] ?></span>
-                                        <span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span>
+                                        <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
                                         <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][2] ?></span>
                                     </div>
                                 </div>
