@@ -19,6 +19,27 @@ class catylacadmin2015 extends CI_Controller {
         }
     }
 
+    public function publish($id){
+        if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
+        {
+            $this->load->model("posts_model");
+            $this->posts_model->publishPost($id);
+            redirect($_SERVER['HTTP_REFERER']);
+        }else{
+            redirect(site_url('catylacadmin2015'));
+        }
+    }
+    public function draft($id){
+        if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
+        {
+            $this->load->model("posts_model");
+            $this->posts_model->draftPost($id);
+            redirect($_SERVER['HTTP_REFERER']);
+        }else{
+            redirect(site_url('catylacadmin2015'));
+        }
+    }
+
 	public function index()
 	{
         
@@ -96,6 +117,7 @@ class catylacadmin2015 extends CI_Controller {
                         $data['status'][$i] = "Deleted";
                         break;
                 }
+                $data['flag'][$i] = $pos['flag'];
                 $i++;
             }
 
@@ -144,6 +166,7 @@ class catylacadmin2015 extends CI_Controller {
                         $data['status'][$i] = "Deleted";
                         break;
                 }
+                $data['flag'][$i] = $pos['flag'];
                 $i++;
             }
 
@@ -192,6 +215,7 @@ class catylacadmin2015 extends CI_Controller {
                         $data['status'][$i] = "Deleted";
                         break;
                 }
+                $data['flag'][$i] = $pos['flag'];
                 $i++;
             }
 

@@ -142,6 +142,18 @@ class posts_model extends CI_Model {
 		$result = $this->db->query($query2);
 	}
 
+	public function publishPost($id)
+	{
+		$query1 = "UPDATE post SET flag = 1 WHERE id=".$id;
+		$result = $this->db->query($query1);
+	}
+
+	public function draftPost($id)
+	{
+		$query1 = "UPDATE post SET flag = 2 WHERE id=".$id;
+		$result = $this->db->query($query1);
+	}
+
 	public function editOnlyPost($post_params){
 		$query1 = " 
 		UPDATE post SET title = '".$post_params['title']."',content = '".$post_params['content']."', date_modified = '".$post_params['date_modified']."',author_id=".$post_params['author_id']." 
