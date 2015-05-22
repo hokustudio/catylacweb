@@ -66,16 +66,16 @@
                     <li class="dropdown">
                         <a style="color:#fff; background-color:#ed944d;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Inspirasi <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a style="color:#fff; background-color:#46b872;" href="http://idcatylac.hol.es/template/wwfi.php">Warna Warni Favorit Indonesia</a></li>
-                          <li><a style="color:#fff; background-color:#aa81ad;" href="http://idcatylac.hol.es/template/tipstrik.php">Tips & Trik</a></li>
-                          <li><a style="color:#fff; background-color:#ed954d;" href="#">Katalog Warna</a></li>
+                          <li><a style="color:#fff; background-color:#46b872;" href="<?php echo base_url().'inspirasi/wwfi' ?>">Warna Warni Favorit Indonesia</a></li>
+                          <li><a style="color:#fff; background-color:#aa81ad;" href="<?php echo base_url().'inspirasi/tipstrik' ?>">Tips & Trik</a></li>
+                          <li><a style="color:#fff; background-color:#ed954d;" href="<?php echo base_url().'inspirasi/katalog' ?>">Katalog Warna</a></li>
                         </ul>
                     </li>
                     <li>
                         <a style="color:#fff; background-color:#f1c143;" href="<?php echo base_url().'product' ?>">Produk</a>
                     </li>
                     <li>
-                        <a style="color:#fff; background-color:#81c360" href="#">Cara Pengecatan</a>
+                        <a style="color:#fff; background-color:#81c360" href="<?php echo base_url().'pengecatan' ?>">Cara Pengecatan</a>
                     </li>
 
                     

@@ -229,7 +229,7 @@
 	opacity: 0.5;
 }
 .content{
-	font-size: 14px;
+	font-size: 16px;
 }
 .content a{
 	color: black;
@@ -357,7 +357,7 @@
 }
 
 .body-col{
-	max-height:440px;
+	max-height:448px;
     overflow:hidden;
     position: center center;
     margin-bottom: 10px;

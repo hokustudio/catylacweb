@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-lg-8">
                     <h1 class="title">Dulux Catylac Cat Tembok Interior</h1>
-                    <p>Dulux Catylac Interior adalah cat dengan teknologi Chroma-Bright, menghadirkan warna keindahan cerah menakjubkan pada dinding interior.
+                    <p class="small">Dulux Catylac Interior adalah cat dengan teknologi Chroma-Bright, menghadirkan warna keindahan cerah menakjubkan pada dinding interior.
                       <br/></p>
                     <table>
                         <tr>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-lg-8">
                     <h1 class="title">Dulux Catylac Cat Dasar Interior</h1>
-                    <p>Mampu meningkatkan daya rekat pada dinding agar tidak mudah mengembung dan mengelupas.<br/></p>
+                    <p class="small">Mampu meningkatkan daya rekat pada dinding agar tidak mudah mengembung dan mengelupas.<br/></p>
                     <table>
                         <tr>
                             <th>Daya Sebar</th>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-lg-8">
                     <h1 class="title">Dulux Catylac Plamur Interior</h1>
-                    <p>Menutup retak rambut maupun retak kecil pada dinding interior agar hasil akhir sempurna.<br/></p>
+                    <p class="small">Menutup retak rambut maupun retak kecil pada dinding interior agar hasil akhir sempurna.<br/></p>
                     <table>
                         <tr>
                             <th>Daya Sebar </th>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-lg-8">
                     <h1 class="title">Dulux Catylac Cat Dinding Exterior</h1>
-                    <p>Cat tembok eksterior dengan teknologi Chroma Bright-UV Fight dan Durabonn Latex. Menjaga warna dinding eksterior cerah lebih lama, tahan terhadap cuaca, dan tidak mudah mengelupas.
+                    <p class="small">Cat tembok eksterior dengan teknologi Chroma Bright-UV Fight dan Durabonn Latex. Menjaga warna dinding eksterior cerah lebih lama, tahan terhadap cuaca, dan tidak mudah mengelupas.
                       <br/></p>
                     
                     <table>
@@ -143,7 +143,7 @@
                 </div>
                 <div class="col-lg-8">
                     <h1 class="title">Dulux Catylac Cat Dasar Exterior</h1>
-                    <p>Mampu mengurangi serangan garam alkali dan meningkatkan daya rekat pada dinding agar tidak mudah mengembung dan mengelupas.<br/></p>
+                    <p class="small">Mampu mengurangi serangan garam alkali dan meningkatkan daya rekat pada dinding agar tidak mudah mengembung dan mengelupas.<br/></p>
                     <table>
                         <tr>
                             <th>Daya Sebar </th>
