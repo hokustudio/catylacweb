@@ -39,6 +39,7 @@
 	                                                </label>
 	                                            </div>
 										    	<?php } ?>
+										    </div>
 											<hr/>
 										    <div class="form-group text-right">
 										    	<button type="submit" class="btn btn-primary" value="Add post" />Add New Post</button>

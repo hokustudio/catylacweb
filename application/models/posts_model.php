@@ -93,8 +93,6 @@ class posts_model extends CI_Model {
 			$result = $this->db->query($query6[$i]);
 			$i++;
 		}
-		//$query = $this->db->insert('post', $post_params);
-		//$query = $this->db->insert('media', $media_params);
 	}
 	public function addCategory($params)
 	{
@@ -107,6 +105,13 @@ class posts_model extends CI_Model {
 		$result = $this->db->query($query);
         $result = $result->result_array();
 		return $result;
+	}
+	public function getPostCategoryID($id)
+	{
+		$query = "SELECT * FROM post_category WHERE post_id=".$id;
+		$result = $this->db->query($query);
+        $result = $result->result_array();
+        return $result;
 	}
 
 	public function getPostCategoryName($id)
@@ -135,6 +140,65 @@ class posts_model extends CI_Model {
 		$query2 = "DELETE FROM post_media WHERE post_id=".$id;
 		$result = $this->db->query($query1);
 		$result = $this->db->query($query2);
+	}
+
+	public function editOnlyPost($post_params){
+		$query1 = " 
+		UPDATE post SET title = '".$post_params['title']."',content = '".$post_params['content']."', date_modified = '".$post_params['date_modified']."',author_id=".$post_params['author_id']." 
+		WHERE id =".$post_params['id'].";";
+		$query2 = "DELETE FROM post_category WHERE post_id=".$post_params['id'].";";
+
+		$i=0;
+		foreach ($post_params['category'] as $key => $value) {
+			$query3[$i] = "INSERT INTO post_category (post_id,category_id) VALUES(".$post_params['id'].", ".$value.");";
+			$i++;
+		}
+
+		$result = $this->db->query($query1);
+		$result = $this->db->query($query2);
+
+		$i=0;
+		foreach ($post_params['category'] as $key => $value) {
+			$result = $this->db->query($query3[$i]);
+			$i++;
+		}
+
+	}
+	public function editPostAndMedia($post_params, $media_params){
+		$query1 = " 
+		UPDATE post SET title = '".$post_params['title']."',content = '".$post_params['content']."', date_modified = '".$post_params['date_modified']."',author_id=".$post_params['author_id']." 
+		WHERE id =".$post_params['id'].";";
+
+		$query2 = "DELETE FROM post_media WHERE post_id=".$post_params['id'].";";
+
+		$query3 = "INSERT INTO media (title,type,description,url,date_created) VALUES ('"
+			.$media_params['title']."',".$media_params['type'].",'".$media_params['description']."','".$media_params['url']."','"
+			.$media_params['date_created']."');";
+
+		$query4 = "SET @media_id = LAST_INSERT_ID();";
+		
+		$query5 = "INSERT INTO post_media (post_id,media_id) VALUES(".$post_params['id'].", @media_id);";
+
+
+		$query6 = "DELETE FROM post_category WHERE post_id=".$post_params['id'].";";
+
+		$i=0;
+		foreach ($post_params['category'] as $key => $value) {
+			$query7[$i] = "INSERT INTO post_category (post_id,category_id) VALUES(".$post_params['id'].",".$value.");";
+			$i++;
+		}
+		//print_r($post_params['category']);
+		$result = $this->db->query($query1);
+		$result = $this->db->query($query2);
+		$result = $this->db->query($query3);
+		$result = $this->db->query($query4);
+		$result = $this->db->query($query5);
+		$result = $this->db->query($query6);
+		$i=0;
+		foreach ($post_params['category'] as $key => $value) {
+			$result = $this->db->query($query7[$i]);
+			$i++;
+		}
 	}
 
 } 

@@ -9,9 +9,14 @@ class catylacadmin2015 extends CI_Controller {
     }
 
     public function deletePost($id){
-        $this->load->model("posts_model");
-        $this->posts_model->deletePostByID($id);
-        redirect($_SERVER['HTTP_REFERER']);
+        if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
+        {
+            $this->load->model("posts_model");
+            $this->posts_model->deletePostByID($id);
+            redirect($_SERVER['HTTP_REFERER']);
+        }else{
+            redirect(site_url('catylacadmin2015'));
+        }
     }
 
 	public function index()
@@ -19,7 +24,7 @@ class catylacadmin2015 extends CI_Controller {
         
 		if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
 		{
-			redirect(site_url('catylacadmin2015/home'));
+			redirect(site_url('catylacadmin2015/allpost'));
 		}
 		else 
 		{
@@ -210,8 +215,8 @@ class catylacadmin2015 extends CI_Controller {
 
             $post['allpost'] = count($this->posts_model->GetAllPost());
             $post['draft'] = count($this->posts_model->GetDraftPost());
-            $post['published'] = count($this->posts_model->GetPublishedPost());    
-
+            $post['published'] = count($this->posts_model->GetPublishedPost());  
+            
             $config['upload_path'] = './assets/images/uploads';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = '100000000';
@@ -220,7 +225,19 @@ class catylacadmin2015 extends CI_Controller {
 
             $this->load->library('upload', $config);
 
-
+            $all = $this->posts_model->getAllCategory();
+            $post['allcategory'] = count($all);
+            $i=0;
+            foreach ($all as $one) {
+                $data['cat_id'][$i] = $one['id'];
+                $data['cat_name'][$i] = $one['name'];   
+                $i++;   
+            }        
+            $catid = $this->posts_model->getPostCategoryID($id);
+            foreach ($catid as $cat) {
+                $data['category_checked'][$cat['category_id']] = 1;
+            }
+            
             $data['content'] = NULL;
             $data['title'] = NULL;
             $data['category'] = array();
@@ -235,35 +252,53 @@ class catylacadmin2015 extends CI_Controller {
                     $data['category'][$i] = $value;
                     $i++;   
                 }
+                $image = $this->posts_model->getPostImage($id);
+                $data['image'] = $image[0];
+
                 if ( ! $this->upload->do_upload('f_image'))
                 {
-                    $data['image'] = array('error' => $this->upload->display_errors());
-                    $this->load->view('headerfooter-dashboard/header_view_dashboard.php');
-                    $this->load->view('admin/admin_edit_post_view', $data);
-                    $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
+                    $date = date('Y-m-d H:i:s', time());
+                    $post_params = array(
+                        'id' => $id,
+                        'media_id' => $data['image']['id'],
+                        'title' => $data['title'],
+                        'content' => $data['content'],
+                        'category' => $data['category'],
+                        'date_modified' => $date,
+                        'author_id' => 1,
+                        'flag' => 2,
+                        'count' => 0
+                        );
+
+                    $this->posts_model->editOnlyPost($post_params);
+                    redirect(site_url('catylacadmin2015/allpost'));
                 }
                 else
                 {
                     $data['image'] = array('upload_data' => $this->upload->data());
-                    $this->load->view('admin/admin_add_post_view', $data);
 
                     $date = date('Y-m-d H:i:s', time());
                     $post_params = array(
+                        'id' => $id,
                         'title' => $data['title'],
                         'content' => $data['content'],
-                        'category' => $data['category'][0],
+                        'category' => $data['category'],
                         'date_modified' => $date,
-                        'date_created' =>  $date,
-                        'author_id' => 1
+                        'author_id' => 1,
+                        'flag' => 2,
+                        'count' => 0
                         );
                     
                     $media_params = array(
                         'title' => $data['title'],
                         'type' => 0,
+                        'description' => "-",
                         'url' => base_url()."assets/images/uploads/".$data['image']['upload_data']['file_name'],
                         'date_created' => $date
                         );
-                   // $this->posts_model->insertPost($post_params, $media_params);
+                    //print_r($media_params);
+                    $this->posts_model->editPostAndMedia($post_params, $media_params);
+                    //redirect(site_url('catylacadmin2015/allpost'));
                 }
             }else{
                 $posts = $this->posts_model->GetPost($id);
@@ -271,6 +306,8 @@ class catylacadmin2015 extends CI_Controller {
                 date_default_timezone_set('Asia/Jakarta');
                 foreach ($posts as $pos) {
                     $data['id'] =  $pos['id'];
+                    $image = $this->posts_model->getPostImage($pos['id']);
+                    $data['image'] = $image[0];
                     $data['title'] =  $pos['title'];
                     $data['content'] =  $pos['content'];
                     $date = date_create($pos['date_modified']);
@@ -282,7 +319,7 @@ class catylacadmin2015 extends CI_Controller {
                             $data['status'] ="Published";
                             break;
                         case 2: //draft
-                            $data['status'] = "Drafted";
+                            $data['status'] = "Draft";
                             break;
                         default:
                             $data['status'] = "Deleted";
@@ -358,123 +395,130 @@ class catylacadmin2015 extends CI_Controller {
 
     public function addCategory()
     {
-        $this->load->model("posts_model");
+        if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
+        {
+            $this->load->model("posts_model");
 
-        $post['allpost'] = count($this->posts_model->GetAllPost());
-        $post['draft'] = count($this->posts_model->GetDraftPost());
-        $post['published'] = count($this->posts_model->GetPublishedPost());  
+            $post['allpost'] = count($this->posts_model->GetAllPost());
+            $post['draft'] = count($this->posts_model->GetDraftPost());
+            $post['published'] = count($this->posts_model->GetPublishedPost());  
 
-        $data = array();
-    
-        if (!empty($_POST['name'])) {
-            $this->posts_model->addCategory($_POST);
-            $all = $this->posts_model->getAllCategory();
-            $post['allcategory'] = count($all);
-            $i=0;
-            foreach ($all as $one) {
-                $data['id'][$i] = $one['id'];   
-                $data['name'][$i] = $one['name'];   
-                $data['description'][$i] = $one['description'];
-                $i++;
+            $data = array();
+        
+            if (!empty($_POST['name'])) {
+                $this->posts_model->addCategory($_POST);
+                $all = $this->posts_model->getAllCategory();
+                $post['allcategory'] = count($all);
+                $i=0;
+                foreach ($all as $one) {
+                    $data['id'][$i] = $one['id'];   
+                    $data['name'][$i] = $one['name'];   
+                    $data['description'][$i] = $one['description'];
+                    $i++;
+                }
+                $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
+                $this->load->view('admin/admin_add_category_view', $data);
+                $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
+                
+            }else{
+                $all = $this->posts_model->getAllCategory();
+                $post['allcategory'] = count($all);
+                $i=0;
+                foreach ($all as $one) {
+                    $data['id'][$i] = $one['id'];
+                    $data['name'][$i] = $one['name'];   
+                    $data['description'][$i] = $one['description'];
+                    $i++;   
+                }
+                $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
+                $this->load->view('admin/admin_add_category_view', $data);
+                $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');    
             }
-            $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
-            $this->load->view('admin/admin_add_category_view', $data);
-            $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
-            
         }else{
-            $all = $this->posts_model->getAllCategory();
-            $post['allcategory'] = count($all);
-            $i=0;
-            foreach ($all as $one) {
-                $data['id'][$i] = $one['id'];
-                $data['name'][$i] = $one['name'];   
-                $data['description'][$i] = $one['description'];
-                $i++;   
-            }
-            $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
-            $this->load->view('admin/admin_add_category_view', $data);
-            $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');    
+            redirect(site_url('catylacadmin2015'));
         }
     }
 
     public function addpost()
     {
-        $this->load->model("posts_model");
+        if($this->session->userdata('logged_in_admin') && $this->session->userdata('user_role') == 1) 
+        {
+            $this->load->model("posts_model");
 
-        $post['allpost'] = count($this->posts_model->GetAllPost());
-        $post['draft'] = count($this->posts_model->GetDraftPost());
-        $post['published'] = count($this->posts_model->GetPublishedPost());  
-        
-        $config['upload_path'] = './assets/images/uploads';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = '100000000';
-        $config['max_width']  = '10000';
-        $config['max_height']  = '10000';
+            $post['allpost'] = count($this->posts_model->GetAllPost());
+            $post['draft'] = count($this->posts_model->GetDraftPost());
+            $post['published'] = count($this->posts_model->GetPublishedPost());  
+            
+            $config['upload_path'] = './assets/images/uploads';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = '100000000';
+            $config['max_width']  = '10000';
+            $config['max_height']  = '10000';
 
-        $this->load->library('upload', $config);
+            $this->load->library('upload', $config);
 
-        $all = $this->posts_model->getAllCategory();
-        $post['allcategory'] = count($all);
-        $i=0;
-        foreach ($all as $one) {
-            $data['cat_id'][$i] = $one['id'];
-            $data['cat_name'][$i] = $one['name'];   
-            $i++;   
-        }        
-
-
-        $data['content'] = NULL;
-        $data['title'] = NULL;
-        $data['category'] = array();
-        $data['image'] = array();
-        date_default_timezone_set('Asia/Jakarta');
-    
-        if (!empty($_POST['title']) && !empty($_POST['content'])) {
-            $data['content'] = $_POST['content'];
-            $data['title'] = $_POST['title'];
+            $all = $this->posts_model->getAllCategory();
+            $post['allcategory'] = count($all);
             $i=0;
-            foreach ($_POST['category'] as $value) {
-                $data['category'][$i] = $value;
+            foreach ($all as $one) {
+                $data['cat_id'][$i] = $one['id'];
+                $data['cat_name'][$i] = $one['name'];   
                 $i++;   
-            }
-            if ( ! $this->upload->do_upload('f_image')){
-                $data['image'] = array('error' => $this->upload->display_errors());
-                $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
-                $this->load->view('admin/admin_add_post_view', $data);
-                $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
-            }else{
-                $data['image'] = array('upload_data' => $this->upload->data());
+            }        
 
-                $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
-                $this->load->view('admin/admin_add_post_view', $data);
-                $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
 
-                $date = date('Y-m-d H:i:s', time());
-                $post_params = array(
-                    'title' => $data['title'],
-                    'content' => $data['content'],
-                    'category' => $data['category'],
-                    'date_modified' => $date,
-                    'date_created' =>  $date,
-                    'author_id' => 1,
-                    'flag' => 2,
-                    'count' => 0
-                    );
-                
-                $media_params = array(
-                    'title' => $data['title'],
-                    'type' => 0,
-                    'description' => "-",
-                    'url' => base_url()."assets/images/uploads/".$data['image']['upload_data']['file_name'],
-                    'date_created' => $date
-                    );
-                $this->posts_model->insertPost($post_params, $media_params);
-            }
+            $data['content'] = NULL;
+            $data['title'] = NULL;
+            $data['category'] = array();
+            $data['image'] = array();
+            date_default_timezone_set('Asia/Jakarta');
         
+            if (!empty($_POST['title']) && !empty($_POST['content'])) {
+                $data['content'] = $_POST['content'];
+                $data['title'] = $_POST['title'];
+                $i=0;
+                foreach ($_POST['category'] as $value) {
+                    $data['category'][$i] = $value;
+                    $i++;   
+                }
+                if ( ! $this->upload->do_upload('f_image')){
+                    $data['image'] = array('error' => $this->upload->display_errors());
+                    $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
+                    $this->load->view('admin/admin_add_post_view', $data);
+                    $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
+                }else{
+                    $data['image'] = array('upload_data' => $this->upload->data());
+
+                    $date = date('Y-m-d H:i:s', time());
+                    $post_params = array(
+                        'title' => $data['title'],
+                        'content' => $data['content'],
+                        'category' => $data['category'],
+                        'date_modified' => $date,
+                        'date_created' =>  $date,
+                        'author_id' => 1,
+                        'flag' => 2,
+                        'count' => 0
+                        );
+                    
+                    $media_params = array(
+                        'title' => $data['title'],
+                        'type' => 0,
+                        'description' => "-",
+                        'url' => base_url()."assets/images/uploads/".$data['image']['upload_data']['file_name'],
+                        'date_created' => $date
+                        );
+                    $this->posts_model->insertPost($post_params, $media_params);
+                    redirect(site_url('catylacadmin2015/allpost'));
+                }
+            
+            }else{
+                $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
+                $this->load->view('admin/admin_add_post_view', $data);
+                $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
+            }  
         }else{
-            $this->load->view('headerfooter-dashboard/header_view_dashboard.php',$post);
-            $this->load->view('admin/admin_add_post_view', $data);
-            $this->load->view('headerfooter-dashboard/footer_view_dashboard.php');
-        }            
+            redirect(site_url('catylacadmin2015'));
+        }          
     }
 }
