@@ -87,19 +87,32 @@
 
                 <ul class="nav navbar-nav" style="float: right">
                     <li><a href="#contact" class="navbar-nav pull-right" style="color:#fff; background-color:#c4df9b;">Contact</a></li>
-                    <li><a href="<?php if ($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2) {
+                    <li style="background-color:#ed9979;"><!--<a href="<?php if ($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2) {
                         echo base_url().'logout';
                     } 
                     else {
                         echo base_url().'login';
-                    } ?>" class="navbar-nav pull-right" style="color:#fff; background-color:#ed9979;">
+                    } ?>" class="navbar-nav pull-right" style="color:#fff; background-color:#ed9979;"></a>
                         <?php 
                             if($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2)
                                 echo "Logout";
-                            else {
-                                echo "Login | Register";
-                            }
-                        ?></a></li>
+                            else { ?> 
+                                <a href="<?php echo base_url().'login' ?>">Login<a><a href="<?php echo base_url().'login' ?>">Register<a>
+                            <?php echo "<a href=".base_url()."login>Login</a>";}
+                        ?>-->
+                    <?php if ($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2) 
+                    { ?>
+                        <a href="<?php echo base_url().'logout';?>" class="navbar-nav pull-right" style="color:#fff; background-color:#ed9979;">Logout</a>
+                    <?php } 
+                        else { ?>
+                        <div class="meta" style="background-color:#ed9979;">
+                            <a href="<?php echo base_url().'login';?>"  style="color:#fff;">Login</a>
+                            <span style="color:#fff;"> | </span>
+                            <a href="<?php echo base_url().'register';?>" style="color:#fff;"> Register</a>
+                        </div>
+                        
+                    <?php }?>
+                    </li>
                 </ul>
             </div>
                 <!-- /.navbar-collapse -->
