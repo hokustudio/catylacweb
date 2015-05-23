@@ -26,7 +26,8 @@
                         </p>
                     </div>
                     <div class="col-md-12" style="margin-top:20px;">
-                        <a class="btn btn-facebook" href="#">
+
+                        <a id="sharer" class="btn btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo current_url()?>">
                             <i class="fa fa-facebook-square fa-lg"></i> Facebook</a>
                         <a class="btn btn-twitter" href="#">
                             <i class="fa fa-twitter fa-lg"></i> Twitter</a>

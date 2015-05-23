@@ -24,7 +24,13 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url().'assets/js/freelancer.js'?>"></script>
-
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      document.getElementById('sharer').onclick = function () {
+      var url = 'https://www.facebook.com/sharer/sharer.php?u=';
+      url += encodeURIComponent(location.href);
+      window.open(url, 'fbshare', 'width=640,height=320');
+    };</script>  
 </body>
 
 </html>
