@@ -362,6 +362,12 @@
     position: center center;
     margin-bottom: 10px;
 }
+
+.popular{
+	max-height: 400px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
 .arbody{
 	background-color:#c4df9c; 
 }

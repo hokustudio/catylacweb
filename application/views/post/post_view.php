@@ -50,7 +50,7 @@
                             $j=0; 
                             while ($j<2){ ?>
                             <div class="col-md-6" style="margin-top:20px; margin-left:-20px;">
-                                <div class="col-md-4 col-lg-4">
+                                <div class="col-md-4 col-lg-4" style="padding:0px;">
                                     <div class="img-sm">
                                         <img src="<?php echo $recent['image'][$k]['url'] ?>" />
                                     </div>
@@ -115,18 +115,28 @@
                         </div>
                     </div>
                     <div class="col-md-12" style="margin-top:20px; background-color:#f1c143; padding-top:20px; padding-bottom:20px;">
-                            <img class="img-responsive" src="<?php echo $popular['image'][0]['url'] ?>" alt="Padu padan warna kesukaan"/>
-                            <h1 class="title"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>"><?php echo $popular['title'][0] ?></a></h1>
-                            <div class="meta">
-                                <span class="date"><?php echo $popular['date'][0] ?></span>
-                                <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
-                                <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][0] ?></span>
+                            <div class="body-col">
+                                <div class="img-body">    
+                                    <img class="img-responsive" src="<?php echo $popular['image'][0]['url'] ?>" alt="Padu padan warna kesukaan"/>
+                                </div>
+                                <h1 class="title"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>"><?php echo $popular['title'][0] ?></a></h1>
+                                <div class="meta">
+                                    <span class="date"><?php echo $popular['date'][0] ?></span>
+                                    <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
+                                    <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $popular['view'][0] ?></span>
+                                </div>
+                                <p class="content"><?php echo $popular['content'][0] ?>
                             </div>
-                            <p class="content"><?php echo $popular['content'][0] ?>
-                            <a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>">read more</a></p>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top:-12px;">
+                                    <a href="<?php echo base_url().'posts/post/'; echo $popular['id'][0] ?>">read more</a></p>
+                                </div>
+                            </div>
                             <div class="col-md-12" style="margin-top:20px; padding-left:0px; padding-right:0px;">
                                 <div class="col-md-4" style="padding:0px;">
-                                    <img class="img-responsive" src="<?php echo $popular['image'][1]['url'] ?>" alt="cat"/>
+                                    <div class="img-sm">
+                                        <img class="img-responsive" src="<?php echo $popular['image'][1]['url'] ?>" alt="cat"/>
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h1 class="title2"><a href="<?php echo base_url().'posts/post/'; echo $popular['id'][1] ?>"><?php echo $popular['title'][1] ?></a></h1>
