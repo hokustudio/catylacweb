@@ -14,4 +14,9 @@ class Inspirasi extends CI_Controller {
 	public function katalog() {
 		
 	}
+
+	public function putihin(){
+		$this->load->view('headerfooter/header_view.php');
+		$this->load->view('wwfi/putih-in.php');
+	}
 }

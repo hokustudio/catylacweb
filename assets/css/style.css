@@ -101,6 +101,14 @@
 .btn-pallet-tosca{
 	background-color: #29abe1;
 }
+
+.btn-pallet-merah{
+	background-color: #f1ccd3;
+}
+.btn-pallet-biru{
+	background-color: #94d1e6;
+}
+
 .btn-pallet-orange{
 	background-color: #ed9c46;
 }
@@ -447,4 +455,85 @@ white-space:nowrap
 }
 #yellowS{
 	background-color: #fece52;
+}
+
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 110%;
+  height: auto;
+  margin-left: -25px;
+	
+  /* Set up positioning */
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.wwficap{
+	background-color:rgba(255,255,255,0.5); 
+	position:absolute; 
+	z-index:10;
+	padding: 0px;
+	height: 996px;
+}
+
+.wwfipan{
+	margin-top: 10px;
+	border-radius: 0 60px 0 60px;
+	height: auto;
+	width: 210px;
+	text-align: left;
+	margin-bottom: 10px;
+	text-align: right;
+	padding: 100px 20px 40px 10px;
+	border: 1px solid transparent;
+	border-color: #4e54ac;
+
+}
+
+.wwfispec{
+	margin-top: 10px;
+	border-radius: 0 20px 0 20px;
+	height: auto;
+	width: 210px;
+	text-align: left;
+	margin-bottom: 10px;
+	text-align: right;
+	padding: 100px 20px 10px 10px;
+}
+
+
+
+.wwfispecnd{
+	margin-top: 0px;
+	border-radius: 0 10px 0 10px;
+	height: auto;
+	width: 100px;
+	text-align: left;
+	margin-bottom: 10px;
+	text-align: right;
+	padding: 20px 10px 5px 5px;
+}
+
+.wwfispec p{
+		font-size: 11px;
+		padding: 0px;
+		margin: 0px;
+		opacity: 0.8;
+}
+
+.wwfispecnd p{
+		font-size: 11px;
+		padding: 0px;
+		margin: 0px;
+		opacity: 0.8;
+}
+
+.wwfipan .bold{
+	font-size: 24px;
+	font-weight: bold;
 }

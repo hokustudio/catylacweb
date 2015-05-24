@@ -20,7 +20,7 @@
                             <!--span class="comment"><span class="glyphicon glyphicon-comment"></span> 3</span-->
                             <span class="views"><span class="glyphicon glyphicon-eye-open"></span> <?php echo $on['view'] ?></span>
                         </div>
-                        <img class="img-responsive" src="<?php echo $on['image']['url'] ?>" alt="catylac"/>
+                        <img class="img-responsive" src="<?php echo $on['image']['url'] ?>"/>
                         <p class="content" style="margin-top:20px;">
                             <?php echo $on['content'] ?>
                         </p>

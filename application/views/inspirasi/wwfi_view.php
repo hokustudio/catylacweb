@@ -15,7 +15,7 @@ rangkaian warna-warni ini, <strong>membuat rumah indah semakin mudah.</strong></
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="margin-top:25px;">
                     <img class="img-responsive" src="<?php echo base_url()."assets/images/wwfi.jpg"?>">
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -29,7 +29,9 @@ rangkaian warna-warni ini, <strong>membuat rumah indah semakin mudah.</strong></
                             <h1 class="label-pallet">Putih</h1>
                         </div>
                         <div class="col-md-3">
-                            <div type="button" class="btn-pallet btn-pallet-putih"></div>
+                            <a href="<?php echo base_url().'inspirasi/putihin' ?>">
+                                <div type="button" class="btn-pallet btn-pallet-putih"></div>
+                            </a>
                         </div>
 
                         <div class="col-md-3">
@@ -65,6 +67,20 @@ rangkaian warna-warni ini, <strong>membuat rumah indah semakin mudah.</strong></
                         </div>
                         <div class="col-md-3">
                             <div class="btn-pallet btn-pallet-tosca"></div>
+                        </div>
+
+                         <div class="col-md-3">
+                            <h1 class="label-pallet">Merah</h1>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-pallet btn-pallet-merah"></div>
+                        </div>
+
+                         <div class="col-md-3">
+                            <h1 class="label-pallet">Biru</h1>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-pallet btn-pallet-biru"></div>
                         </div>
 
                         <div class="col-md-3">
@@ -131,6 +147,20 @@ rangkaian warna-warni ini, <strong>membuat rumah indah semakin mudah.</strong></
                         </div>
                         <div class="col-md-3">
                             <div class="btn-pallet btn-pallet-tosca-ex"></div>
+                        </div>
+
+                         <div class="col-md-3">
+                            <h1 class="label-pallet">Merah</h1>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-pallet btn-pallet-merah-ex"></div>
+                        </div>
+
+                         <div class="col-md-3">
+                            <h1 class="label-pallet">Biru</h1>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-pallet btn-pallet-biru-ex"></div>
                         </div>
 
                         <div class="col-md-3">
