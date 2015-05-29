@@ -48,7 +48,7 @@
         <!-- /.container -->
     </nav>
     <nav class="navbar navbar-default navbar-fixed-top-menu">
-        <div class="container" style="padding-left:0px; padding-right:0px;">
+        <div class="container">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -76,18 +76,15 @@
                     </li>
                     <li>
                         <a style="color:#fff; background-color:#81c360" href="<?php echo base_url().'pengecatan' ?>">Cara Pengecatan</a>
+                    </li>                    
+                    <li>
+                        <a style="color:#fff; background-color:#1c74bb;" href="<?php echo base_url().'promo' ?>">Acara & Promosi</a>
                     </li>
-
-                    
-                    
-                    <!-- <li>
-                        <a style="color:#fff; background-color:#1c74bb;" href="#">Acara & Promosi</a>
-                    </li> -->
                 </ul>
 
                 <ul class="nav navbar-nav" style="float: right">
                     <li><a href="#contact" class="navbar-nav pull-right" style="color:#fff; background-color:#c4df9b;">Contact</a></li>
-                    <li style="background-color:#ed9979;"><!--<a href="<?php if ($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2) {
+                    <li><!--<a href="<?php if ($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2) {
                         echo base_url().'logout';
                     } 
                     else {
@@ -105,11 +102,11 @@
                         <a href="<?php echo base_url().'logout';?>" class="navbar-nav pull-right" style="color:#fff; background-color:#ed9979;">Logout</a>
                     <?php } 
                         else { ?>
-                        <div class="meta" style="background-color:#ed9979;">
-                            <a href="<?php echo base_url().'login';?>"  style="color:#fff;">Login</a>
-                            <span style="color:#fff;"> | </span>
-                            <a href="<?php echo base_url().'register';?>" style="color:#fff;"> Register</a>
-                        </div>
+                        <!-- <div class="meta" style="background-color:#ed9979;"> -->
+                            <a href="<?php echo base_url().'login';?>"  style="color:#fff; background-color:#ed9979;">Login | Register</a>
+                         <!--    <span style="color:#fff;"> | </span>
+                            <a href="<?php echo base_url().'register';?>" style="color:#fff; background-color:#ed9979;"> Register</a> -->
+                        <!-- </div> -->
                         
                     <?php }?>
                     </li>

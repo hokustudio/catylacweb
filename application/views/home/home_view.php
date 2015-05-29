@@ -2,8 +2,68 @@
             <div class="row">
                 <div class="col-md-12 col-lg-12">
                     <div class="img-left col-md-7 col-lg-8">
-                        <h1 class="featured big" id="pink">Tren Warna Cat 2015</h1>
-                        <img src="<?php echo base_url().'assets/images/ruangkecil.jpg'?>"/>
+                        <div id="slider" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators" style="left:700px;">
+                                <li data-target="#slider" data-slide-to="0" class="active">
+                                <li data-target="#slider" data-slide-to="1" class="active">
+                                <li data-target="#slider" data-slide-to="2" class="active">
+                                <li data-target="#slider" data-slide-to="3" class="active">
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                        <h1 class="featured big" id="pink">
+                                            <a href="<?php echo base_url().'posts/post/'; echo $recent['id'][0] ?>"  style="color:#fff;">
+                                                <?php echo $recent['title'][0] ?>
+                                            </a>
+                                        </h1>
+                                        <img align="middle" src="<?php echo $recent['image'][0]['url'] ?>"/>
+                                 </div>
+                                <?php 
+                                $i=0; $k=1;
+                                while($i<3){?>
+                                 <div class="item">
+                                        <h1 class="featured big" id="pink">
+                                            <a href="<?php echo base_url().'posts/post/'; echo $recent['id'][$k] ?>"  style="color:#fff;">
+                                                <?php echo $recent['title'][$k] ?>
+                                            </a>
+                                        </h1>
+                                        <img align="middle" src="<?php echo $recent['image'][$k]['url'] ?>"/>
+                                 </div>
+                                 <?php $k++; $i++; }?>
+ <!--                            <div class="item">
+                                        <h1 class="featured big" id="pink">
+                                            <a href="<?php echo base_url().'posts/post/'; echo $id[2] ?>" style="color:#fff;">
+                                                <?php echo $title[2] ?>
+                                            </a>
+                                        </h1>
+                                        <img src="<?php echo $image[2]['url'] ?>"/>
+                                </div>
+                                <div class="item">
+                                        <h1 class="featured big" id="pink">
+                                            <a href="<?php echo base_url().'posts/post/'; echo $id[3] ?>"  style="color:#fff;">
+                                                <?php echo $title[3] ?>
+                                            </a>
+                                        </h1>
+                                        <img src="<?php echo $image[3]['url'] ?>"/>
+                                    </div>
+                                <div class="item">
+                                        <h1 class="featured big" id="pink">
+                                            <a href="<?php echo base_url().'posts/post/'; echo $id[4] ?>"  style="color:#fff;">
+                                                <?php echo $title[4] ?>
+                                            </a>
+                                        </h1>
+                                        <img src="<?php echo $image[4]['url'] ?>"/>
+                                </div>-->              
+                            </div>
+                             <a class="left carousel-control" href="#slider" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="right carousel-control" href="#slider" role="button" data-slide="next" style="right:0; left:auto;">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                        </div>
                     </div>
                     <div class="img-right-col col-md-5 col-lg-4">
                         <div class="img-right col-md-12 col-lg-12">

@@ -22,6 +22,29 @@ class Home extends CI_Controller {
 
 			$i++;
 		}
+
+		$recent = $this->posts_model->GetRecentPosts(4);
+		$i=0;
+		date_default_timezone_set('Asia/Jakarta');
+		foreach ($recent as $r) {
+			$data['recent']['id'][$i] =  $r['id'];
+
+			$image = $this->posts_model->getPostImage($r['id']);
+			$data['recent']['image'][$i] = $image[0];
+
+			$data['recent']['title'][$i] =  $r['title'];
+
+			$data['recent']['content'][$i] = strip_tags($r['content']);
+			
+			$date = date_create($r['date_modified']);
+			$data['recent']['date'][$i] = date_format($date,"M,d Y");
+
+			//$data['recent']['tag'][$i] = $r['tag_id'];
+
+			$data['recent']['view'][$i] = $r['count'];
+
+			$i++;
+		}
 		
     	$this->load->view('headerfooter/header_view');
       	$this->load->view('home/home_view', $data);

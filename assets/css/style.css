@@ -284,6 +284,7 @@
 }
 
 .panelFooter {
+	z-index: 10;
   margin-top: 20px;
   background-color: #aacd69;
   border: 1px solid transparent;
@@ -310,17 +311,20 @@
 	opacity: 1;
 }
 
+
 .img-left{
-	max-height:450px;
-	min-height: 450px;
+	display: inline-block;
+	max-height: 450px;
     overflow:hidden;
     position: center center;
     padding: 0px;
 }
 .img-left img{
-   width:auto;
-   min-height:100px;   
-   position: center center;
+	vertical-align: middle;
+   	min-width: 800px;
+   	height: auto;
+/*   min-height: 450px;*/
+   max-height:450px;   
 }
 
 .img-right{
@@ -394,7 +398,7 @@
 }
 
 .featured.big{
-	font-size: 36px;
+	font-size: 32px;
 }
 
 #green{
@@ -478,7 +482,7 @@ img.bg {
 	position:absolute; 
 	z-index:10;
 	padding: 0px;
-	height: 996px;
+	height: 1060px;
 }
 
 .wwfipan{

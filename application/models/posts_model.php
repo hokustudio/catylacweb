@@ -27,7 +27,7 @@ class posts_model extends CI_Model {
 
 	public function GetPost($id)
 	{
-		$query = "SELECT * FROM post WHERE id=".$id;
+		$query = "SELECT * FROM post WHERE category='Tips & Trik' AND id=".$id;
 		$result = $this->db->query($query);
         $result = $result->result_array();
 		return $result;
