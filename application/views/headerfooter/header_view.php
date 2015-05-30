@@ -84,6 +84,8 @@
 
                 <ul class="nav navbar-nav" style="float: right">
                     <li><a href="#contact" class="navbar-nav pull-right" style="color:#fff; background-color:#c4df9b;">Contact</a></li>
+                    <?php if ($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2) 
+                    { ?>
                     <li><!--<a href="<?php if ($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2) {
                         echo base_url().'logout';
                     } 
@@ -97,15 +99,17 @@
                                 <a href="<?php echo base_url().'login' ?>">Login<a><a href="<?php echo base_url().'login' ?>">Register<a>
                             <?php echo "<a href=".base_url()."login>Login</a>";}
                         ?>-->
-                    <?php if ($this->session->userdata('logged_in') && $this->session->userdata('user_role') == 2) 
-                    { ?>
+                   
                         <a href="<?php echo base_url().'logout';?>" class="navbar-nav pull-right" style="color:#fff; background-color:#ed9979;">Logout</a>
-                    <?php } 
-                        else { ?>
+                    </li>
+                    <?php }
+                    else { ?>
+                    <li>
                         <!-- <div class="meta" style="background-color:#ed9979;"> -->
-                            <a href="<?php echo base_url().'login';?>"  style="color:#fff; background-color:#ed9979;">Login | Register</a>
-                         <!--    <span style="color:#fff;"> | </span>
-                            <a href="<?php echo base_url().'register';?>" style="color:#fff; background-color:#ed9979;"> Register</a> -->
+                            <a href="<?php echo base_url().'login';?>"  style="color:#fff; background-color:#ed9979; padding-right:0px;">Login |</a>
+                    </li>
+                    <li>
+                            <a href="<?php echo base_url().'register';?>" style="color:#fff; background-color:#ed9979; padding-left:5px;"> Register</a>
                         <!-- </div> -->
                         
                     <?php }?>
