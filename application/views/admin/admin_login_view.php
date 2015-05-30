@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Catylac | Warna-warni Indonesia</title>
+    <title>Catylac | Login Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url().'assets/css/bootstrap.min.css' ?>" rel="stylesheet">
