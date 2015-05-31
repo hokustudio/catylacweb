@@ -134,6 +134,15 @@ class posts_model extends CI_Model {
 		return $allname;
 	}
 
+	public function getPostWithCategoryName($name)
+	{
+		$query = "SELECT * FROM post WHERE category = '$name'";
+		$result = $this->db->query($query);
+        $result = $result->result_array();
+
+		return $result;
+	}
+
 	public function deletePostByID($id)
 	{
 		$query1 = "DELETE FROM post WHERE id=".$id;

@@ -8,7 +8,8 @@ class Login extends CI_Controller {
       	}
       	else
       	{
-      		$this->load->view('login/login_view');
+          $data['alert'] = "";
+      		$this->load->view('login/login_view', $data);
       	}
   	}
 
