@@ -20,7 +20,7 @@ class Inspirasi extends CI_Controller {
 		date_default_timezone_set('Asia/Jakarta');
 		$i=0;
 		foreach ($posts as $post) {
-			$data['on']['id'][$i] = count($posts);
+			$data['on']['id'][$i] = $post['id'];
 			$image = $this->posts_model->getPostImage($post['id']);
 			$data['on']['image'][$i] = $image[0];
 
