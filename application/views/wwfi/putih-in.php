@@ -32,7 +32,7 @@
 		</div>
 		<div class="c.,/."
 		<div class="col-md-12 col-lg-12">
-			<img class="bg" src="<?php echo base_url()."assets/images/putih-in.png" ?>"/>
+			<img class="bg" src="<?php echo base_url()."assets/images/putih_int.png" ?>"/>
 		</div>
 
 	</div>

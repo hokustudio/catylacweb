@@ -38,18 +38,24 @@ rangkaian warna-warni ini, <strong>membuat rumah indah semakin mudah.</strong></
                             <h1 class="label-pallet">Kuning</h1>
                         </div>
                         <div class="col-md-3">
-                            <div class="btn-pallet btn-pallet-kuning"></div>
+                            <a href="<?php echo base_url().'inspirasi/kuning_int' ?>">
+                                <div class="btn-pallet btn-pallet-kuning"></div>
+                            </a>
                         </div>
 
                         <div class="col-md-3">
                             <h1 class="label-pallet">Netral Hangat</h1>
                         </div>
                         <div class="col-md-3">
-                            <div class="btn-pallet btn-pallet-netral-hangat"></div>
+                            <a href="<?php echo base_url().'inspirasi/nethangat_int' ?>">
+                                <div class="btn-pallet btn-pallet-netral-hangat"></div>
+                            </a>
                         </div>
 
                         <div class="col-md-3">
-                            <h1 class="label-pallet">Hijau</h1>
+                            <a href="<?php echo base_url().'inspirasi/hijau_int' ?>">
+                                <h1 class="label-pallet">Hijau</h1>
+                            </a>
                         </div>
                         <div class="col-md-3">
                             <div class="btn-pallet btn-pallet-hijau"></div>
@@ -59,42 +65,54 @@ rangkaian warna-warni ini, <strong>membuat rumah indah semakin mudah.</strong></
                             <h1 class="label-pallet">Netral Sejuk</h1>
                         </div>
                         <div class="col-md-3">
-                            <div class="btn-pallet btn-pallet-netral-sejuk"></div>
+                            <a href="<?php echo base_url().'inspirasi/netsejuk_int' ?>">
+                                <div class="btn-pallet btn-pallet-netral-sejuk"></div>
+                            </a>
                         </div>
 
                         <div class="col-md-3">
                             <h1 class="label-pallet">Tosca</h1>
                         </div>
                         <div class="col-md-3">
-                            <div class="btn-pallet btn-pallet-tosca"></div>
+                            <a href="<?php echo base_url().'inspirasi/tosca_int' ?>">
+                                <div class="btn-pallet btn-pallet-tosca"></div>
+                            </a>
                         </div>
 
                          <div class="col-md-3">
-                            <h1 class="label-pallet">Merah</h1>
+                                <h1 class="label-pallet">Merah</h1>
                         </div>
                         <div class="col-md-3">
-                            <div class="btn-pallet btn-pallet-merah"></div>
+                            <a href="<?php echo base_url().'inspirasi/merah_int' ?>">
+                                <div class="btn-pallet btn-pallet-merah"></div>
+                            </a>
                         </div>
 
                          <div class="col-md-3">
-                            <h1 class="label-pallet">Biru</h1>
+                                <h1 class="label-pallet">Biru</h1>
                         </div>
                         <div class="col-md-3">
-                            <div class="btn-pallet btn-pallet-biru"></div>
+                            <a href="<?php echo base_url().'inspirasi/biru_int' ?>">
+                                <div class="btn-pallet btn-pallet-biru"></div>
+                            </a>
                         </div>
 
                         <div class="col-md-3">
                             <h1 class="label-pallet">Orange</h1>
                         </div>
                         <div class="col-md-3">
-                            <div class="btn-pallet btn-pallet-orange"></div>
+                            <a href="<?php echo base_url().'inspirasi/oranye_int' ?>">
+                                <div class="btn-pallet btn-pallet-orange"></div>
+                            </a>
                         </div>
 
                         <div class="col-md-3">
                             <h1 class="label-pallet">Ungu</h1>
                         </div>
                         <div class="col-md-3">
-                            <div class="btn-pallet btn-pallet-ungu"></div>
+                            <a href="<?php echo base_url().'inspirasi/ungu_int' ?>">
+                                <div class="btn-pallet btn-pallet-ungu"></div>
+                            </a>
                         </div>
                     </div>
 
